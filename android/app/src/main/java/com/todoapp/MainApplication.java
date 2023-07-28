@@ -1,4 +1,4 @@
-package com.rn_todo_app;
+package com.todoapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
