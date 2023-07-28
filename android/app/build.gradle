@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -78,8 +79,8 @@ android {
         applicationId "com.rn_todo_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode generateVersionCode()
+        versionName generateVersionName()
     }
     signingConfigs {
         debug {
@@ -101,6 +102,25 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+}
+
+/**
+ * Internal version number generator
+ * Refer https://developer.android.com/google/play/publishing/multiple-apks.html#using-a-version-code-scheme
+*/
+private Integer generateVersionCode() {
+  return rootProject.ext.minSdkVersion * 10000000 + project.env.get("MAJOR_VERSION").toInteger() * 10000 + project.env.get("MINOR_VERSION").toInteger() * 100 + project.env.get("PATCH_VERSION").toInteger()
+}
+
+/**
+ * Internal version name generator
+*/
+private String generateVersionName() {
+   String versionName = "${project.env.get("MAJOR_VERSION")}.${project.env.get("MINOR_VERSION")}.${project.env.get("PATCH_VERSION")}"
+   if(project.env.get("PRE_RELEASE") != null && !project.env.get("PRE_RELEASE").isEmpty()) {
+       versionName = versionName + "-" + project.env.get("PRE_RELEASE")
+   }
+   return versionName
 }
 
 dependencies {
