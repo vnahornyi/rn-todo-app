@@ -10,7 +10,9 @@
     "test": "jest",
     "pod-install": "cd ios && pod install && cd ..",
     "gradlew-clean": "cd android && ./gradlew clean && cd ..",
-    "watchman-clean": "watchman watch-del-all"
+    "watchman-clean": "watchman watch-del-all",
+    "build-android": "yarn watchman-clean && cd android && ./gradlew assembleRelease && cd ..",
+    "ios-release": "yarn watchman-clean && react-native run-ios --mode=Release"
   },
   "dependencies": {
     "react": "18.2.0",
