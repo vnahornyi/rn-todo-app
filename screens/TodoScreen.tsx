@@ -1,6 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button, Dimensions, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { RootScreensType } from "../App";
+
+import COLORS from "../constants/colors";
+import SIZES from "../constants/sizes";
 
 type PropsType = NativeStackScreenProps<
   RootScreensType,
@@ -19,12 +22,12 @@ const TodoScreen: React.FC<PropsType> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: "#FFFFFF",
-    width: Dimensions.get("screen").width,
-    height: Dimensions.get("screen").height - 150,
+    backgroundColor: COLORS.modalBackground,
+    width: SIZES.screenWidth,
+    height: SIZES.screenHeight - 150,
     position: "absolute",
     bottom: 0,
-    shadowColor: "#000000",
+    shadowColor: COLORS.shadowColor,
     shadowOffset: { width: 2, height: 2 },
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
