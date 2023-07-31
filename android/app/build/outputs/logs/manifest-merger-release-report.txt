@@ -9,6 +9,7 @@ MERGED from [:react-native-gesture-handler] /Users/vnahornyi/Developer/Github/vn
 MERGED from [:react-native-reanimated] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -153,6 +154,8 @@ MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/
 MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:5:5-44
