@@ -18,6 +18,9 @@ import TodosScreen from "./screens/TodosScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import PolicyScreen from "./screens/PolicyScreen";
 
+import ListIcon from "./components/icons/ListIcon";
+import SettingsIcon from "./components/icons/settings.svg";
+
 export type RootScreensType = {
   Welcome: undefined;
   TabRoot: undefined;
@@ -63,10 +66,14 @@ const DrawerNavigator: React.FC = () => {
 
 const TabsNavigator: React.FC = () => (
   <Tabs.Navigator initialRouteName="Todos">
-    <Tabs.Screen name="Todos" component={TodosScreen} />
+    <Tabs.Screen
+      name="Todos"
+      options={{ tabBarIcon: ListIcon }}
+      component={TodosScreen}
+    />
     <Tabs.Screen
       name="DrawerRoot"
-      options={{ headerShown: false }}
+      options={{ headerShown: false, tabBarIcon: SettingsIcon }}
       component={DrawerNavigator}
     />
   </Tabs.Navigator>
