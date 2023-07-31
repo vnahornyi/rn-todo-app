@@ -5,12 +5,18 @@ INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/ap
 INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/src/main/AndroidManifest.xml:1:1-25:12
 INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/src/main/AndroidManifest.xml:1:1-25:12
 MERGED from [:react-native-config] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-config/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-gesture-handler] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-reanimated] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/vnahornyi/.gradle/caches/transforms-3/b14585e0ae3314e7a64bac79062dab1c/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /Users/vnahornyi/.gradle/caches/transforms-3/30de096d5ba1553f19f74e52c1ed5c94/transformed/jetified-appcompat-resources-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.autofill:autofill:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/b2c399022120a5a16a836a433ff38c79/transformed/jetified-autofill-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/d2a0ef851359ae355103c8a357e2e22c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/378d88de2fde0e29d92543d12e33b34a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/vnahornyi/.gradle/caches/transforms-3/177c698be397eb145127cfb5353a1679/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.4] /Users/vnahornyi/.gradle/caches/transforms-3/bd9fd054e490e97f2ce10f2145ad8c4d/transformed/jetified-activity-1.2.4/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/0ea8bc22ad4ebc71e19e62d6deb40a83/transformed/jetified-emoji2-views-helper-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -34,18 +40,23 @@ MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] /Users/vnahornyi/.
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/eeeac1eb65861c80bc87d1dc691435bb/transformed/jetified-imagepipeline-base-2.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:soloader:2.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/e4c6348dd356291cec54fd56223b2321/transformed/jetified-soloader-2.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/vnahornyi/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vnahornyi/.gradle/caches/transforms-3/7b17992492878694f2c2e90e8f81414b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/cde464ada6bf8e4db1ce6a3edaecd38a/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/424f890fe8622dde08059ad036b58b7e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/dfc6ab3249e5535f070488292c345975/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f5e70c2f711b5e203c26b6cab0f2f096/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/1d74f8570861ae29793135827590fc1b/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/156ccde47985acbd22f61b88769a582b/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/vnahornyi/.gradle/caches/transforms-3/bc4630f7968b1f3eb8f0d04812c2ae29/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.7.0] /Users/vnahornyi/.gradle/caches/transforms-3/75e4635b66fa4e4e84e71b52579837ce/transformed/core-1.7.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/da6b1dd448f2c4a1e044c031e9364089/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/vnahornyi/.gradle/caches/transforms-3/05e32d0972721ec86db9faf3518c82bb/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/98e95a351ab9bde9d0757d3ba2da6dd9/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/vnahornyi/.gradle/caches/transforms-3/8c6c5513f4a20550a4fe8e18d90a0b23/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/9eef969e6025718ac1fde2c52b3066d8/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/c785f2650a4ab9597610a42a5423b6e7/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vnahornyi/.gradle/caches/transforms-3/a1eec6f4e1f4253fcf428dd43a9fa3cd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/653d028e3d1b563c6d219d7c9480311d/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/vnahornyi/.gradle/caches/transforms-3/6f02cdabe3b0f4b648ca283ad9ff996c/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
@@ -76,6 +87,8 @@ ADDED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/s
 		ADDED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/src/main/AndroidManifest.xml:3:22-64
 application
 ADDED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/vnahornyi/.gradle/caches/transforms-3/d5d05479173d466a6bd0989b3b3e5ef4/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
@@ -132,10 +145,20 @@ INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/ap
 INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/android/app/src/main/AndroidManifest.xml
 MERGED from [:react-native-config] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-config/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-config] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-config/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-reanimated] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-reanimated] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/vnahornyi/.gradle/caches/transforms-3/b14585e0ae3314e7a64bac79062dab1c/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/vnahornyi/.gradle/caches/transforms-3/b14585e0ae3314e7a64bac79062dab1c/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /Users/vnahornyi/.gradle/caches/transforms-3/30de096d5ba1553f19f74e52c1ed5c94/transformed/jetified-appcompat-resources-1.4.1/AndroidManifest.xml:20:5-22:41
@@ -144,6 +167,8 @@ MERGED from [androidx.autofill:autofill:1.1.0] /Users/vnahornyi/.gradle/caches/t
 MERGED from [androidx.autofill:autofill:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/b2c399022120a5a16a836a433ff38c79/transformed/jetified-autofill-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/d2a0ef851359ae355103c8a357e2e22c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/d2a0ef851359ae355103c8a357e2e22c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/378d88de2fde0e29d92543d12e33b34a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/378d88de2fde0e29d92543d12e33b34a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/vnahornyi/.gradle/caches/transforms-3/177c698be397eb145127cfb5353a1679/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/vnahornyi/.gradle/caches/transforms-3/177c698be397eb145127cfb5353a1679/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.2.4] /Users/vnahornyi/.gradle/caches/transforms-3/bd9fd054e490e97f2ce10f2145ad8c4d/transformed/jetified-activity-1.2.4/AndroidManifest.xml:20:5-22:41
@@ -190,6 +215,10 @@ MERGED from [com.facebook.fresco:soloader:2.5.0] /Users/vnahornyi/.gradle/caches
 MERGED from [com.facebook.fresco:soloader:2.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/e4c6348dd356291cec54fd56223b2321/transformed/jetified-soloader-2.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/vnahornyi/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/vnahornyi/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vnahornyi/.gradle/caches/transforms-3/7b17992492878694f2c2e90e8f81414b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vnahornyi/.gradle/caches/transforms-3/7b17992492878694f2c2e90e8f81414b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/cde464ada6bf8e4db1ce6a3edaecd38a/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/cde464ada6bf8e4db1ce6a3edaecd38a/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/424f890fe8622dde08059ad036b58b7e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -198,10 +227,14 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vnahornyi/.gradle/
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/dfc6ab3249e5535f070488292c345975/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f5e70c2f711b5e203c26b6cab0f2f096/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f5e70c2f711b5e203c26b6cab0f2f096/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/1d74f8570861ae29793135827590fc1b/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/1d74f8570861ae29793135827590fc1b/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/156ccde47985acbd22f61b88769a582b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/156ccde47985acbd22f61b88769a582b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/vnahornyi/.gradle/caches/transforms-3/bc4630f7968b1f3eb8f0d04812c2ae29/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/vnahornyi/.gradle/caches/transforms-3/bc4630f7968b1f3eb8f0d04812c2ae29/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/f2782bc466a14e48ac3fd50422df07eb/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.7.0] /Users/vnahornyi/.gradle/caches/transforms-3/75e4635b66fa4e4e84e71b52579837ce/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.7.0] /Users/vnahornyi/.gradle/caches/transforms-3/75e4635b66fa4e4e84e71b52579837ce/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/da6b1dd448f2c4a1e044c031e9364089/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
@@ -214,6 +247,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/vnahornyi/.gra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/vnahornyi/.gradle/caches/transforms-3/8c6c5513f4a20550a4fe8e18d90a0b23/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/9eef969e6025718ac1fde2c52b3066d8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/9eef969e6025718ac1fde2c52b3066d8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/c785f2650a4ab9597610a42a5423b6e7/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/c785f2650a4ab9597610a42a5423b6e7/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vnahornyi/.gradle/caches/transforms-3/a1eec6f4e1f4253fcf428dd43a9fa3cd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vnahornyi/.gradle/caches/transforms-3/a1eec6f4e1f4253fcf428dd43a9fa3cd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/653d028e3d1b563c6d219d7c9480311d/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44

@@ -924,6 +924,97 @@ library {
     value: 1
   }
 }
+library {
+  maven_library {
+    groupId: "androidx.transition"
+    artifactId: "transition"
+    version: "1.2.0"
+  }
+  digests {
+    sha256: "\241\340Y\263\274\vC\245\215\354\016\376\315\312\250\234\202\322\274\245R\352[\254\366elF\350S\025~"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.core"
+    artifactId: "core-ktx"
+    version: "1.6.0"
+  }
+  digests {
+    sha256: "q\357\002\316\347\353\241\351\005\247\363\1771;P\272\212;\356\016\305\232\017\207mZx\206\016\035\351c"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.coordinatorlayout"
+    artifactId: "coordinatorlayout"
+    version: "1.1.0"
+  }
+  digests {
+    sha256: "D\251\343\n\277V\257\020%\305*\n\365\006\376\351\304\023\032\245^\375\245/\237\331E\022\021\305\350\313"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "com.google.android.material"
+    artifactId: "material"
+    version: "1.1.0"
+  }
+  digests {
+    sha256: "X\364\373nY\206\354\216\001\2473\352\205\351\337\203\317y\006\016\003)\376\030\253\301\222\331\355\251{&"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.cardview"
+    artifactId: "cardview"
+    version: "1.0.0"
+  }
+  digests {
+    sha256: "\021\223\300L\"\243\326\265\224m\256\237N\214Y\326\255\336jq\266\275]\207\373\231\330-\332\032\376\307"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.recyclerview"
+    artifactId: "recyclerview"
+    version: "1.1.0"
+  }
+  digests {
+    sha256: "\360\322\265\246}\n\221\356\033\034s\357+cj\201\363V9%\335\321Z\035N\034A\354(\336zO"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.viewpager2"
+    artifactId: "viewpager2"
+    version: "1.0.0"
+  }
+  digests {
+    sha256: "\351\\\0001\324\314$|\324\201\226\306(~X\322\316\345M\234y\270Z\376\247\311\t 3\002u\257"
+  }
+  repo_index {
+    value: 2
+  }
+}
 library_dependencies {
   library_dep_index: 1
   library_dep_index: 16
@@ -1309,10 +1400,73 @@ library_dependencies {
   library_dep_index: 65
   library_dep_index: 3
 }
+library_dependencies {
+  library_index: 71
+  library_dep_index: 3
+  library_dep_index: 4
+  library_dep_index: 2
+}
+library_dependencies {
+  library_index: 72
+  library_dep_index: 62
+  library_dep_index: 3
+  library_dep_index: 4
+}
+library_dependencies {
+  library_index: 73
+  library_dep_index: 3
+  library_dep_index: 4
+  library_dep_index: 26
+  library_dep_index: 2
+}
+library_dependencies {
+  library_index: 74
+  library_dep_index: 3
+  library_dep_index: 16
+  library_dep_index: 75
+  library_dep_index: 73
+  library_dep_index: 4
+  library_dep_index: 24
+  library_dep_index: 6
+  library_dep_index: 76
+  library_dep_index: 71
+  library_dep_index: 13
+  library_dep_index: 77
+}
+library_dependencies {
+  library_index: 75
+  library_dep_index: 3
+}
+library_dependencies {
+  library_index: 76
+  library_dep_index: 3
+  library_dep_index: 4
+  library_dep_index: 26
+  library_dep_index: 2
+}
+library_dependencies {
+  library_index: 77
+  library_dep_index: 3
+  library_dep_index: 24
+  library_dep_index: 76
+  library_dep_index: 4
+  library_dep_index: 2
+}
 module_dependencies {
   module_name: "base"
   dependency_index: 0
   dependency_index: 70
+  dependency_index: 16
+  dependency_index: 72
+  dependency_index: 62
+  dependency_index: 65
+  dependency_index: 71
+  dependency_index: 4
+  dependency_index: 67
+  dependency_index: 24
+  dependency_index: 73
+  dependency_index: 36
+  dependency_index: 74
 }
 repositories {
   maven_repo {

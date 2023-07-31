@@ -1,118 +1,115 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+  createDrawerNavigator,
+} from "@react-navigation/drawer";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import WelcomeScreen from "./screens/WelcomeScreen";
+import CreateScreen from "./screens/CreateScreen";
+import TodoScreen from "./screens/TodoScreen";
+import TodosScreen from "./screens/TodosScreen";
+import SettingsScreen from "./screens/SettingsScreen";
+import PolicyScreen from "./screens/PolicyScreen";
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+export type RootScreensType = {
+  Welcome: undefined;
+  TabRoot: undefined;
+  DrawerRoot: undefined;
+  Create: {
+    isFirstOpen: boolean;
+  };
+  Todos: undefined;
+  Todo: undefined;
+  TransparentTodo: undefined;
+  Settings: undefined;
+  Policy: undefined;
+};
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+const Stack = createNativeStackNavigator<RootScreensType>();
+const Tabs = createBottomTabNavigator<RootScreensType>();
+const Drawer = createDrawerNavigator<RootScreensType>();
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
+  const handleStart = () => {
+    props.navigation.navigate("Welcome");
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem label="Go To Start Page" onPress={handleStart} />
+    </DrawerContentScrollView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const DrawerNavigator: React.FC = () => {
+  return (
+    <Drawer.Navigator
+      drawerContent={CustomDrawerContent}
+      initialRouteName="Settings"
+    >
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
+      <Drawer.Screen name="Policy" component={PolicyScreen} />
+    </Drawer.Navigator>
+  );
+};
+
+const TabsNavigator: React.FC = () => (
+  <Tabs.Navigator initialRouteName="Todos">
+    <Tabs.Screen name="Todos" component={TodosScreen} />
+    <Tabs.Screen
+      name="DrawerRoot"
+      options={{ headerShown: false }}
+      component={DrawerNavigator}
+    />
+  </Tabs.Navigator>
+);
+
+const App: React.FC = () => {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Welcome"
+          screenOptions={{ headerShown: false }}
+        >
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
+          <Stack.Screen
+            name="Create"
+            component={CreateScreen}
+            initialParams={{ isFirstOpen: false }}
+            options={{
+              animation: "slide_from_left",
+            }}
+          />
+          <Stack.Screen name="TabRoot" component={TabsNavigator} />
+          <Stack.Screen
+            name="TransparentTodo"
+            component={TodoScreen}
+            options={{
+              presentation: "containedTransparentModal",
+              animation: "slide_from_bottom",
+            }}
+          />
+          <Stack.Screen
+            name="Todo"
+            component={TodoScreen}
+            options={{
+              presentation: "modal",
+              animation: "slide_from_bottom",
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+};
 
 export default App;
