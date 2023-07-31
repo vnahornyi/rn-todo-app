@@ -10,6 +10,9 @@ import {
   createDrawerNavigator,
 } from "@react-navigation/drawer";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import SplashScreen from "react-native-splash-screen";
+
+import theme from "./constants/theme";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
 import CreateScreen from "./screens/CreateScreen";
@@ -20,6 +23,8 @@ import PolicyScreen from "./screens/PolicyScreen";
 
 import ListIcon from "./components/icons/ListIcon";
 import SettingsIcon from "./components/icons/settings.svg";
+import { useEffect } from "react";
+import { Platform } from "react-native";
 
 export type RootScreensType = {
   Welcome: undefined;
@@ -80,9 +85,15 @@ const TabsNavigator: React.FC = () => (
 );
 
 const App: React.FC = () => {
+  useEffect(() => {
+    if (Platform.OS === "android") {
+      SplashScreen.hide();
+    }
+  }, []);
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer theme={theme}>
         <Stack.Navigator
           initialRouteName="Welcome"
           screenOptions={{ headerShown: false }}
