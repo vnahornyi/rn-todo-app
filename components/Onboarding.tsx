@@ -52,32 +52,34 @@ const Onboarding: React.FC<PropsType> = ({
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.skip}>
-        <Button
-          variant="ghost"
-          color="secondary"
-          title="SKIP"
-          onPress={handleSkip}
-        />
-      </View>
-      <View style={styles.topPart}>{<Image style={styles.image} />}</View>
-      <View style={styles.bottomPart}>
-        <Stepper step={step} />
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
-      </View>
-      <View style={styles.bottomTabs}>
-        {navigation.canGoBack() && (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <View style={styles.skip}>
           <Button
-            title="BACK"
             variant="ghost"
             color="secondary"
-            onPress={navigation.goBack}
+            title="SKIP"
+            onPress={handleSkip}
           />
-        )}
-        <View style={styles.next}>
-          <Button title="NEXT" onPress={handleNext} />
+        </View>
+        <View style={styles.topPart}>{<Image style={styles.image} />}</View>
+        <View style={styles.bottomPart}>
+          <Stepper step={step} />
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.description}>{description}</Text>
+        </View>
+        <View style={styles.bottomTabs}>
+          {navigation.canGoBack() && (
+            <Button
+              title="BACK"
+              variant="ghost"
+              color="secondary"
+              onPress={navigation.goBack}
+            />
+          )}
+          <View style={styles.next}>
+            <Button title="NEXT" onPress={handleNext} />
+          </View>
         </View>
       </View>
     </SafeAreaView>
