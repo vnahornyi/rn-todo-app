@@ -1,36 +1,37 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, TouchableOpacity } from "react-native";
+
 import { RootScreensType } from "../App";
-
 import COLORS from "../constants/colors";
-import SIZES from "../constants/sizes";
 
-type PropsType = NativeStackScreenProps<
-  RootScreensType,
-  "Todo" | "TransparentTodo"
->;
+import CloseIcon from "../assets/images/icons/close.svg";
+
+type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
 const TodoScreen: React.FC<PropsType> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text>Todo transparent modal</Text>
-      <Button title="Close" onPress={navigation.goBack} />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={styles.backButton} activeOpacity={0.8}>
+        <CloseIcon color={COLORS.white} onPress={navigation.goBack} />
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    backgroundColor: COLORS.modalBackground,
-    width: SIZES.screenWidth,
-    height: SIZES.screenHeight - 150,
-    position: "absolute",
-    bottom: 0,
-    shadowColor: COLORS.shadowColor,
-    shadowOffset: { width: 2, height: 2 },
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+  },
+  backButton: {
+    backgroundColor: COLORS.cardBackground,
+    borderRadius: 4,
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

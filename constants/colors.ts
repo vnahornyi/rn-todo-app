@@ -5,12 +5,14 @@ const whiteHalf = "rgba(255, 255, 255, 0.44)";
 const gray = "#AFAFAF";
 
 const background = "#121212";
+const cardBackground = "#363636";
 
 const COLORS = {
   white,
   black,
   background,
   gray,
+  cardBackground,
   shadowColor: black,
   modalBackground: black,
   primary: purple,

@@ -1,10 +1,8 @@
 import { useMemo } from "react";
 import {
-  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
-  ViewStyle,
 } from "react-native";
 
 import COLORS from "../constants/colors";
@@ -35,6 +33,8 @@ const Button: React.FC<PropsType> = ({
         ...styles.default,
         backgroundColor: bgColor,
         borderColor,
+        paddingVertical: variant === "ghost" ? 0 : 12,
+        paddingHorizontal: variant === "ghost" ? 0 : 24,
       },
       textStyles: {
         ...TYPOGRAPHY.body,
@@ -60,10 +60,9 @@ export default Button;
 const styles = StyleSheet.create({
   default: {
     width: "auto",
-    paddingHorizontal: 12,
-    paddingVertical: 24,
     borderWidth: 1,
     borderColor: "transparent",
     backgroundColor: "transparent",
+    borderRadius: 4,
   },
 });
