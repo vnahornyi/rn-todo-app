@@ -20,6 +20,12 @@ const TodosScreen: React.FC = () => {
       description: "desc",
       isCompleted: false,
     },
+    {
+      id: 2,
+      title: "Todo 2",
+      description: "description 2",
+      isCompleted: false,
+    },
   ]);
 
   const renderItem = useCallback(
@@ -32,13 +38,12 @@ const TodosScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Empty isEmpty={!todos.length}>
-        <View style={styles.listContainer}>
-          <FlatList
-            data={todos}
-            keyExtractor={(todo) => todo.id.toString()}
-            renderItem={renderItem}
-          />
-        </View>
+        <FlatList
+          data={todos}
+          keyExtractor={(todo) => todo.id.toString()}
+          renderItem={renderItem}
+          contentContainerStyle={styles.listContainer}
+        />
       </Empty>
     </SafeAreaView>
   );
@@ -53,5 +58,6 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingVertical: 12,
     paddingHorizontal: 24,
+    gap: 16,
   },
 });

@@ -7,7 +7,6 @@ import { RootScreensType } from "../App";
 
 import Button from "../UI/Button";
 import Stepper from "../UI/Stepper";
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import { useCallback } from "react";
 
@@ -122,14 +121,12 @@ const styles = StyleSheet.create({
   },
   title: {
     ...TYPOGRAPHY.largeTitle,
-    color: COLORS.white,
     textAlign: "center",
     marginTop: 50,
     marginBottom: 42,
   },
   description: {
     ...TYPOGRAPHY.body,
-    color: COLORS.white,
     textAlign: "center",
   },
   image: {

@@ -2,7 +2,7 @@ import CreateDailyRoutine from "../../assets/images/intro/create-daily-routine.s
 
 import Onboarding from "../../components/Onboarding";
 
-const FirstOnboardingScreen: React.FC = () => {
+const SecondOnboardingScreen: React.FC = () => {
   return (
     <Onboarding
       Image={CreateDailyRoutine}
@@ -13,4 +13,4 @@ const FirstOnboardingScreen: React.FC = () => {
   );
 };
 
-export default FirstOnboardingScreen;
+export default SecondOnboardingScreen;

@@ -23,7 +23,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
   const navigation = useNavigation<TodosScreenNavigationProp>();
 
   const handleOpenTodo = () => {
-    navigation.navigate("TodoScreen");
+    navigation.navigate("TodoScreen", props);
   };
 
   return (
@@ -34,8 +34,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
     >
       <CheckBox initialValue={isCompleted} onChange={setCompleted} />
       <View style={styles.content}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
+        <Text style={TYPOGRAPHY.body}>{title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -55,13 +54,5 @@ const styles = StyleSheet.create({
   },
   content: {
     gap: 6,
-  },
-  title: {
-    ...TYPOGRAPHY.body,
-    color: COLORS.white,
-  },
-  description: {
-    ...TYPOGRAPHY.smallBody,
-    color: COLORS.white,
   },
 });

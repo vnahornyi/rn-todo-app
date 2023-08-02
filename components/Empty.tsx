@@ -16,8 +16,8 @@ const Empty: React.FC<EmptyPropsType> = ({ children, isEmpty }) => {
     <View style={styles.container}>
       <View style={styles.content}>
         <EmptyImage width={227} height={227} />
-        <Text style={styles.title}>What do you want to do today?</Text>
-        <Text style={styles.subtitle}>Tap + to add your tasks</Text>
+        <Text style={TYPOGRAPHY.bigBody}>What do you want to do today?</Text>
+        <Text style={TYPOGRAPHY.body}>Tap + to add your tasks</Text>
       </View>
     </View>
   );
@@ -34,13 +34,5 @@ const styles = StyleSheet.create({
   content: {
     gap: 10,
     alignItems: "center",
-  },
-  title: {
-    ...TYPOGRAPHY.bigBody,
-    color: COLORS.white,
-  },
-  subtitle: {
-    ...TYPOGRAPHY.body,
-    color: COLORS.white,
   },
 });

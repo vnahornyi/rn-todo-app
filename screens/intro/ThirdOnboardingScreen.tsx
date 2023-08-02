@@ -2,7 +2,7 @@ import OrganizeYourTasks from "../../assets/images/intro/organize-your-tasks.svg
 
 import Onboarding from "../../components/Onboarding";
 
-const FirstOnboardingScreen: React.FC = () => {
+const ThirdOnboardingScreen: React.FC = () => {
   return (
     <Onboarding
       Image={OrganizeYourTasks}
@@ -13,4 +13,4 @@ const FirstOnboardingScreen: React.FC = () => {
   );
 };
 
-export default FirstOnboardingScreen;
+export default ThirdOnboardingScreen;
