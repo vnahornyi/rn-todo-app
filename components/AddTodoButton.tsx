@@ -4,6 +4,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 import COLORS from "../constants/colors";
 import { RootScreensType } from "../App";
+import { moderatePixel, pixelSizeHorizontal } from "../utils/normalize";
 
 import PlusIcon from "../assets/images/icons/plus.svg";
 
@@ -25,7 +26,11 @@ const AddTodoButton: React.FC = () => {
       activeOpacity={0.8}
       style={styles.container}
     >
-      <PlusIcon width={32} height={32} color={COLORS.white} />
+      <PlusIcon
+        width={moderatePixel(32)}
+        height={moderatePixel(32)}
+        color={COLORS.white}
+      />
     </TouchableOpacity>
   );
 };
@@ -34,13 +39,13 @@ export default AddTodoButton;
 
 const styles = StyleSheet.create({
   container: {
-    width: 64,
-    height: 64,
+    width: moderatePixel(64),
+    height: moderatePixel(64),
     backgroundColor: COLORS.primary,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 9999,
     position: "relative",
-    bottom: 32,
+    bottom: pixelSizeHorizontal(32),
   },
 });

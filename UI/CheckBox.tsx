@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import CheckIcon from "../assets/images/icons/check.svg";
 import useBoolean from "../hooks/useBoolean";
 import COLORS from "../constants/colors";
+import { moderatePixel } from "../utils/normalize";
 
 type CheckBoxPropsType = {
   initialValue?: boolean;
@@ -35,8 +36,8 @@ export default CheckBox;
 
 const styles = StyleSheet.create({
   checkbox: {
-    width: 24,
-    height: 24,
+    width: moderatePixel(24),
+    height: moderatePixel(24),
     borderWidth: 1.5,
     borderRadius: 9999,
   },

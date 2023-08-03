@@ -4,10 +4,15 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { RootScreensType } from "../App";
 import COLORS from "../constants/colors";
+import TYPOGRAPHY from "../constants/typography";
+import {
+  moderatePixel,
+  pixelSizeHorizontal,
+  pixelSizeVertical,
+} from "../utils/normalize";
 
 import CloseIcon from "../assets/images/icons/close.svg";
 import CheckBox from "../UI/CheckBox";
-import TYPOGRAPHY from "../constants/typography";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
@@ -37,24 +42,24 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingVertical: 12,
+    paddingHorizontal: pixelSizeHorizontal(24),
+    paddingVertical: pixelSizeVertical(12),
   },
   backButton: {
     backgroundColor: COLORS.cardBackground,
     borderRadius: 4,
-    width: 32,
-    height: 32,
+    width: moderatePixel(32),
+    height: moderatePixel(32),
     justifyContent: "center",
     alignItems: "center",
   },
   head: {
-    paddingVertical: 27,
+    paddingVertical: pixelSizeVertical(27),
     flexDirection: "row",
-    gap: 21,
+    gap: pixelSizeHorizontal(21),
   },
   content: {
-    gap: 15,
+    gap: pixelSizeVertical(15),
   },
   description: {
     ...TYPOGRAPHY.body,

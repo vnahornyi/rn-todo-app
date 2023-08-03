@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
-import { StyleSheet, FlatList, ListRenderItemInfo, View } from "react-native";
+import { StyleSheet, FlatList, ListRenderItemInfo } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 
 import Empty from "../components/Empty";
 import TodoCard from "../components/TodoCard";
@@ -56,8 +58,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   listContainer: {
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    gap: 16,
+    paddingVertical: pixelSizeVertical(12),
+    paddingHorizontal: pixelSizeHorizontal(24),
+    gap: pixelSizeVertical(16),
   },
 });

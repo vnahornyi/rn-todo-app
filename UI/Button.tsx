@@ -1,12 +1,9 @@
 import { useMemo } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
+import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 
 type PropsType = {
   onPress: () => void;
@@ -33,8 +30,8 @@ const Button: React.FC<PropsType> = ({
         ...styles.default,
         backgroundColor: bgColor,
         borderColor,
-        paddingVertical: variant === "ghost" ? 0 : 12,
-        paddingHorizontal: variant === "ghost" ? 0 : 24,
+        paddingVertical: variant === "ghost" ? 0 : pixelSizeVertical(12),
+        paddingHorizontal: variant === "ghost" ? 0 : pixelSizeHorizontal(24),
       },
       textStyles: {
         ...TYPOGRAPHY.body,

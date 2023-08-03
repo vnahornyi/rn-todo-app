@@ -23,6 +23,7 @@ import HomeSolidIcon from "./assets/images/icons/home-solid.svg";
 import SettingsIcon from "./assets/images/icons/settings.svg";
 import SettingsSolidIcon from "./assets/images/icons/settings-solid.svg";
 import AddTodoButton from "./components/AddTodoButton";
+import { heightPixel, pixelSizeVertical, widthPixel } from "./utils/normalize";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -102,7 +103,7 @@ const TabsNavigator: React.FC = () => (
         tabBarIcon: ({ focused }) => {
           const Icon = focused ? HomeSolidIcon : HomeIcon;
 
-          return <Icon width={24} height={24} />;
+          return <Icon width={widthPixel(24)} height={heightPixel(24)} />;
         },
       }}
     />
@@ -122,7 +123,13 @@ const TabsNavigator: React.FC = () => (
         tabBarIcon: ({ focused }) => {
           const Icon = focused ? SettingsSolidIcon : SettingsIcon;
 
-          return <Icon width={28} height={28} color={COLORS.white} />;
+          return (
+            <Icon
+              width={widthPixel(28)}
+              height={heightPixel(28)}
+              color={COLORS.white}
+            />
+          );
         },
       }}
     />

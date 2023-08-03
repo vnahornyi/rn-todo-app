@@ -1,14 +1,19 @@
 import { StyleSheet, View, SafeAreaView, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useCallback } from "react";
 import { SvgProps } from "react-native-svg";
 
 import { RootScreensType } from "../App";
+import TYPOGRAPHY from "../constants/typography";
+import {
+  moderatePixel,
+  pixelSizeHorizontal,
+  pixelSizeVertical,
+} from "../utils/normalize";
 
 import Button from "../UI/Button";
 import Stepper from "../UI/Stepper";
-import TYPOGRAPHY from "../constants/typography";
-import { useCallback } from "react";
 
 type PropsType = {
   Image: React.FC<SvgProps>;
@@ -91,17 +96,17 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     alignItems: "center",
-    padding: 24,
+    padding: moderatePixel(24),
   },
   skip: {
     position: "absolute",
-    left: 24,
-    top: 24,
+    left: pixelSizeHorizontal(24),
+    top: pixelSizeVertical(24),
   },
   topPart: {
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: 50,
+    paddingBottom: pixelSizeVertical(50),
     height: "50%",
   },
   bottomPart: {
@@ -114,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
-    bottom: 24,
+    bottom: pixelSizeVertical(24),
   },
   next: {
     marginLeft: "auto",
@@ -122,8 +127,8 @@ const styles = StyleSheet.create({
   title: {
     ...TYPOGRAPHY.largeTitle,
     textAlign: "center",
-    marginTop: 50,
-    marginBottom: 42,
+    marginTop: pixelSizeVertical(50),
+    marginBottom: pixelSizeVertical(42),
   },
   description: {
     ...TYPOGRAPHY.body,

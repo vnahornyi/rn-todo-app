@@ -1,5 +1,11 @@
 import { StyleSheet, View } from "react-native";
+
 import COLORS from "../constants/colors";
+import {
+  heightPixel,
+  pixelSizeHorizontal,
+  widthPixel,
+} from "../utils/normalize";
 
 type PropsType = {
   step: 1 | 2 | 3;
@@ -26,12 +32,12 @@ export default Stepper;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    gap: 5,
-    width: 95,
+    gap: pixelSizeHorizontal(5),
+    width: widthPixel(95),
   },
   block: {
     backgroundColor: COLORS.gray,
-    height: 4,
+    height: heightPixel(4),
     flexGrow: 1,
     borderRadius: 8,
   },

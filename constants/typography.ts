@@ -1,38 +1,40 @@
 import { StyleSheet } from "react-native";
+
 import COLORS from "./colors";
+import { fontPixel } from "../utils/normalize";
 
 const FONT_FAMILY = "Lato";
 
 const TYPOGRAPHY = StyleSheet.create({
   largeTitle: {
-    fontSize: 32,
+    fontSize: fontPixel(32),
     fontWeight: "700",
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },
   title: {
-    fontSize: 20,
+    fontSize: fontPixel(20),
     fontWeight: "700",
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },
   bigBody: {
-    fontSize: 18,
+    fontSize: fontPixel(18),
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },
   body: {
-    fontSize: 16,
+    fontSize: fontPixel(16),
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },
   smallBody: {
-    fontSize: 14,
+    fontSize: fontPixel(14),
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },
   span: {
-    fontSize: 12,
+    fontSize: fontPixel(12),
     fontFamily: FONT_FAMILY,
     color: COLORS.white,
   },

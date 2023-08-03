@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 
-import EmptyImage from "../assets/images/tabs/empty.svg";
+import { moderatePixel, pixelSizeVertical } from "../utils/normalize";
 import TYPOGRAPHY from "../constants/typography";
-import COLORS from "../constants/colors";
+
+import EmptyImage from "../assets/images/tabs/empty.svg";
 
 type EmptyPropsType = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const Empty: React.FC<EmptyPropsType> = ({ children, isEmpty }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <EmptyImage width={227} height={227} />
+        <EmptyImage width={moderatePixel(227)} height={moderatePixel(227)} />
         <Text style={TYPOGRAPHY.bigBody}>What do you want to do today?</Text>
         <Text style={TYPOGRAPHY.body}>Tap + to add your tasks</Text>
       </View>
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   content: {
-    gap: 10,
+    gap: pixelSizeVertical(10),
     alignItems: "center",
   },
 });

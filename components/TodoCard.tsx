@@ -1,13 +1,17 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { TodoType } from "../screens/TodosScreen";
 
+import { TodoType } from "../screens/TodosScreen";
 import { RootScreensType } from "../App";
 
 import COLORS from "../constants/colors";
-import CheckBox from "../UI/CheckBox";
 import TYPOGRAPHY from "../constants/typography";
+
+import EducationIcon from "../assets/images/icons/education.svg";
+import CheckBox from "../UI/CheckBox";
+import Chip from "../UI/Chip";
+import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 
 type TodoCardPropsType = TodoType & {
   setCompleted: React.ComponentProps<typeof CheckBox>["onChange"];
@@ -19,7 +23,7 @@ type TodosScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
-  const { isCompleted, title, description } = props;
+  const { isCompleted, title } = props;
   const navigation = useNavigation<TodosScreenNavigationProp>();
 
   const handleOpenTodo = () => {
@@ -35,6 +39,10 @@ const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
       <CheckBox initialValue={isCompleted} onChange={setCompleted} />
       <View style={styles.content}>
         <Text style={TYPOGRAPHY.body}>{title}</Text>
+        <View style={styles.bottomPart}>
+          <Text style={styles.when}>Today At 16:45</Text>
+          <Chip color="blue" Icon={EducationIcon} name="University" />
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -47,12 +55,22 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.cardBackground,
     borderRadius: 4,
     flexDirection: "row",
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    paddingVertical: pixelSizeVertical(12),
+    paddingHorizontal: pixelSizeHorizontal(10),
     alignItems: "center",
-    gap: 12,
+    gap: pixelSizeHorizontal(12),
+  },
+  bottomPart: {
+    flexDirection: "row",
+    flexGrow: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   content: {
-    gap: 6,
+    flexGrow: 1,
+  },
+  when: {
+    ...TYPOGRAPHY.smallBody,
+    color: COLORS.gray,
   },
 });
