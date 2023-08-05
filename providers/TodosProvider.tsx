@@ -43,10 +43,10 @@ const TodosProvider: React.FC<ProviderPropsType> = ({ children }) => {
 
   const editTodo = (todoId: number, payload: Omit<TodoType, "id">) => {
     setTodos((todos) => {
-      const todoIndex = todos.findIndex((todo) => todo.id !== todoId);
-      todos[todoIndex] = { id: todoId, ...payload };
+      const filtered = todos.filter((todo) => todo.id !== todoId);
+      filtered.push({ id: todoId, ...payload });
 
-      return [...todos];
+      return filtered;
     });
   };
 
