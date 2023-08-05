@@ -45,7 +45,12 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
         <Text style={TYPOGRAPHY.body}>{title}</Text>
         <View style={styles.bottomPart}>
           <Text style={styles.when}>Today At 16:45</Text>
-          <Chip color="blue" Icon={EducationIcon} name="University" />
+          <Chip
+            iconColor={COLORS.primary}
+            color="blue"
+            Icon={EducationIcon}
+            name="University"
+          />
         </View>
       </View>
     </TouchableOpacity>

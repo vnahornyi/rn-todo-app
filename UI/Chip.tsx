@@ -12,11 +12,12 @@ import TYPOGRAPHY from "../constants/typography";
 
 type ChipPropsType = {
   color: "blue" | "red" | "yellow";
+  iconColor: string;
   Icon: React.FC<SvgProps>;
   name: string;
 };
 
-const Chip: React.FC<ChipPropsType> = ({ name, Icon, color }) => {
+const Chip: React.FC<ChipPropsType> = ({ name, Icon, color, iconColor }) => {
   const chipStyles = useMemo(
     () => ({
       ...styles.chip,
@@ -27,7 +28,11 @@ const Chip: React.FC<ChipPropsType> = ({ name, Icon, color }) => {
 
   return (
     <View style={chipStyles}>
-      <Icon width={moderatePixel(15)} height={moderatePixel(15)} />
+      <Icon
+        color={iconColor}
+        width={moderatePixel(15)}
+        height={moderatePixel(15)}
+      />
       <Text style={TYPOGRAPHY.span}>{name}</Text>
     </View>
   );

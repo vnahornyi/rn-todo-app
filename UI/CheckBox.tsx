@@ -17,10 +17,7 @@ const CheckBox: React.FC<CheckBoxPropsType> = ({ value, onChange }) => {
 
   return (
     <TouchableOpacity
-      style={{
-        ...styles.checkbox,
-        borderColor: value ? COLORS.primary : COLORS.white,
-      }}
+      style={[styles.checkbox, value && styles.checked]}
       activeOpacity={0.8}
       onPress={handleCheck}
     >
@@ -37,5 +34,9 @@ const styles = StyleSheet.create({
     height: moderatePixel(24),
     borderWidth: 1.5,
     borderRadius: 9999,
+    borderColor: COLORS.white,
+  },
+  checked: {
+    borderColor: COLORS.primary,
   },
 });

@@ -7,7 +7,6 @@ import {
   TextInput,
   View,
   Keyboard,
-  Platform,
   TouchableWithoutFeedback,
 } from "react-native";
 
@@ -21,6 +20,7 @@ import { RootScreensType } from "../App";
 import Button from "../UI/Button";
 import useTodos from "../hooks/useTodos";
 import SIZES from "../constants/sizes";
+import PLATFORM from "../constants/platform";
 
 type CreateEditTodoPropsType = NativeStackScreenProps<
   RootScreensType,
@@ -64,7 +64,7 @@ const CreateEditTodo: React.FC<CreateEditTodoPropsType> = ({
       <KeyboardAvoidingView
         style={styles.fill}
         keyboardVerticalOffset={moderatePixel(50)}
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        behavior={PLATFORM.isIOS ? "padding" : undefined}
         enabled
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

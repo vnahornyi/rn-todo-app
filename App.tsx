@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Platform, StatusBar, StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -9,6 +9,8 @@ import SplashScreen from "react-native-splash-screen";
 import { heightPixel, widthPixel } from "./utils/normalize";
 import theme from "./constants/theme";
 import COLORS from "./constants/colors";
+import PLATFORM from "./constants/platform";
+import { TodoType } from "./providers/TodosProvider";
 
 import FirstOnboardingScreen from "./screens/intro/FirstOnboardingScreen";
 import SecondOnboardingScreen from "./screens/intro/SecondOnboardingScreen";
@@ -25,7 +27,6 @@ import HomeIcon from "./assets/images/icons/home.svg";
 import HomeSolidIcon from "./assets/images/icons/home-solid.svg";
 import SettingsIcon from "./assets/images/icons/settings.svg";
 import SettingsSolidIcon from "./assets/images/icons/settings-solid.svg";
-import { TodoType } from "./providers/todosProvider";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -44,7 +45,7 @@ const Tabs = createBottomTabNavigator<RootScreensType>();
 
 const App: React.FC = () => {
   useEffect(() => {
-    if (Platform.OS === "android") {
+    if (PLATFORM.isAndroid) {
       SplashScreen.hide();
     }
   }, []);
@@ -78,7 +79,7 @@ const App: React.FC = () => {
             <Stack.Screen
               name="CreateEditTodo"
               options={{
-                presentation: Platform.OS === "ios" ? "modal" : "card",
+                presentation: PLATFORM.isIOS ? "modal" : "card",
                 animation: "slide_from_bottom",
                 gestureDirection: "vertical",
               }}
@@ -110,7 +111,13 @@ const TabsNavigator: React.FC = () => {
           tabBarIcon: ({ focused }) => {
             const Icon = focused ? HomeSolidIcon : HomeIcon;
 
-            return <Icon width={widthPixel(24)} height={heightPixel(24)} />;
+            return (
+              <Icon
+                color={COLORS.white}
+                width={widthPixel(24)}
+                height={heightPixel(24)}
+              />
+            );
           },
         }}
       />

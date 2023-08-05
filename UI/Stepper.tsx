@@ -13,9 +13,7 @@ type PropsType = {
 
 const Stepper: React.FC<PropsType> = ({ step }) => {
   const getBlockStyle = (currentStep: number) => {
-    if (step === currentStep) return [styles.block, styles.active];
-
-    return styles.block;
+    return [styles.block, step === currentStep && styles.active];
   };
 
   return (
