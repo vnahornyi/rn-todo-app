@@ -1,80 +1,61 @@
-import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
-import { Button, Modal, StyleSheet, Text, View } from "react-native";
-import { useState } from "react";
-import RNModal from "react-native-modal";
+import { useCallback } from "react";
+import {
+  StyleSheet,
+  FlatList,
+  ListRenderItemInfo,
+  Platform,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import DeviceInfo from "react-native-device-info";
 
-import { RootScreensType } from "../App";
+import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
+import { TodoType } from "../providers/todosProvider";
+import useTodos from "../hooks/useTodos";
+
+import Empty from "../components/Empty";
+import TodoCard from "../components/TodoCard";
 import COLORS from "../constants/colors";
 
-type PropsType = BottomTabScreenProps<RootScreensType, "Todos">;
+const TodosScreen: React.FC = () => {
+  const { todos, completeTodo } = useTodos();
 
-const TodosScreen: React.FC<PropsType> = ({ navigation }) => {
-  const [isVisible, setVisible] = useState<boolean>(false);
-  const [isOpenNativeModal, setOpenNativeModal] = useState<boolean>(false);
-
-  const handleOpenTodo = () => {
-    navigation.navigate("Todo");
-  };
-
-  const handleOpenTransparentTodo = () => {
-    navigation.navigate("TransparentTodo");
-  };
+  const renderItem = useCallback(
+    (props: ListRenderItemInfo<TodoType>) => (
+      <TodoCard
+        {...props.item}
+        setCompleted={(status: boolean) => completeTodo(props.item.id, status)}
+      />
+    ),
+    []
+  );
 
   return (
-    <View>
-      <Text>Todos</Text>
-      <Button
-        title="Open React Native Modal"
-        onPress={() => setOpenNativeModal(true)}
-      />
-      <Button
-        title="Open react-native-modal modal"
-        onPress={() => setVisible(true)}
-      />
-      <Button title="Open Modal" onPress={handleOpenTodo} />
-      <Button
-        title="Open Transparent Modal"
-        onPress={handleOpenTransparentTodo}
-      />
-      <Modal
-        visible={isOpenNativeModal}
-        onRequestClose={() => setOpenNativeModal(false)}
-        animationType="slide"
-        transparent={true}
-      >
-        <View style={styles.nativeModalWrapper}>
-          <View style={styles.nativeModal}>
-            <Text>React Native Modal</Text>
-            <Button title="Close" onPress={() => setOpenNativeModal(false)} />
-          </View>
-        </View>
-      </Modal>
-      <RNModal
-        isVisible={isVisible}
-        onSwipeComplete={() => setVisible(false)}
-        swipeDirection="down"
-      >
-        <View style={styles.modal}>
-          <Text>react-native-modal</Text>
-          <Button title="Close" onPress={() => setVisible(false)} />
-        </View>
-      </RNModal>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Empty isEmpty={!todos.length}>
+        <FlatList
+          data={todos}
+          keyExtractor={(todo) => todo.id.toString()}
+          renderItem={renderItem}
+          contentContainerStyle={styles.listContainer}
+        />
+      </Empty>
+    </SafeAreaView>
   );
 };
 
+export default TodosScreen;
+
 const styles = StyleSheet.create({
-  nativeModal: {
-    backgroundColor: COLORS.modalBackground,
+  container: {
+    flexGrow: 1,
+    backgroundColor:
+      DeviceInfo.hasNotch() && Platform.Version < "16"
+        ? COLORS.blue
+        : undefined,
   },
-  nativeModalWrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modal: {
-    backgroundColor: COLORS.modalBackground,
+  listContainer: {
+    paddingVertical: pixelSizeVertical(12),
+    paddingHorizontal: pixelSizeHorizontal(24),
+    gap: pixelSizeVertical(16),
   },
 });
-
-export default TodosScreen;

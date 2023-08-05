@@ -1,122 +1,160 @@
-import "react-native-gesture-handler";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { StatusBar, StyleSheet } from "react-native";
+import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  DrawerContentComponentProps,
-  DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
-  createDrawerNavigator,
-} from "@react-navigation/drawer";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import SplashScreen from "react-native-splash-screen";
 
-import WelcomeScreen from "./screens/WelcomeScreen";
-import CreateScreen from "./screens/CreateScreen";
-import TodoScreen from "./screens/TodoScreen";
+import { heightPixel, widthPixel } from "./utils/normalize";
+import theme from "./constants/theme";
+import COLORS from "./constants/colors";
+import PLATFORM from "./constants/platform";
+import { TodoType } from "./providers/TodosProvider";
+
+import FirstOnboardingScreen from "./screens/intro/FirstOnboardingScreen";
+import SecondOnboardingScreen from "./screens/intro/SecondOnboardingScreen";
+import ThirdOnboardingScreen from "./screens/intro/ThirdOnboardingScreen";
 import TodosScreen from "./screens/TodosScreen";
-import SettingsScreen from "./screens/SettingsScreen";
-import PolicyScreen from "./screens/PolicyScreen";
+import CreateEditTodoPlug from "./screens/CreateEditTodoPlug";
+import TodoScreen from "./screens/TodoScreen";
+import Settings from "./screens/Settings";
+import CreateEditTodo from "./screens/CreateEditTodo";
 
-import ListIcon from "./components/icons/ListIcon";
-import SettingsIcon from "./components/icons/settings.svg";
+import RootProvider from "./providers";
+import AddTodoButton from "./components/AddTodoButton";
+import HomeIcon from "./assets/images/icons/home.svg";
+import HomeSolidIcon from "./assets/images/icons/home-solid.svg";
+import SettingsIcon from "./assets/images/icons/settings.svg";
+import SettingsSolidIcon from "./assets/images/icons/settings-solid.svg";
 
 export type RootScreensType = {
-  Welcome: undefined;
-  TabRoot: undefined;
-  DrawerRoot: undefined;
-  Create: {
-    isFirstOpen: boolean;
-  };
-  Todos: undefined;
-  Todo: undefined;
-  TransparentTodo: undefined;
-  Settings: undefined;
-  Policy: undefined;
+  FirstOnboarding: undefined;
+  SecondOnboarding: undefined;
+  ThirdOnboarding: undefined;
+  TabsRoot: undefined;
+  TodosScreen: undefined;
+  TodoScreen: { todoId: number };
+  CreateEditTodoPlug: undefined;
+  CreateEditTodo?: TodoType;
+  SettingsScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootScreensType>();
 const Tabs = createBottomTabNavigator<RootScreensType>();
-const Drawer = createDrawerNavigator<RootScreensType>();
-
-const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
-  const handleStart = () => {
-    props.navigation.navigate("Welcome");
-  };
-
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label="Go To Start Page" onPress={handleStart} />
-    </DrawerContentScrollView>
-  );
-};
-
-const DrawerNavigator: React.FC = () => {
-  return (
-    <Drawer.Navigator
-      drawerContent={CustomDrawerContent}
-      initialRouteName="Settings"
-    >
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
-      <Drawer.Screen name="Policy" component={PolicyScreen} />
-    </Drawer.Navigator>
-  );
-};
-
-const TabsNavigator: React.FC = () => (
-  <Tabs.Navigator initialRouteName="Todos">
-    <Tabs.Screen
-      name="Todos"
-      options={{ tabBarIcon: ListIcon }}
-      component={TodosScreen}
-    />
-    <Tabs.Screen
-      name="DrawerRoot"
-      options={{ headerShown: false, tabBarIcon: SettingsIcon }}
-      component={DrawerNavigator}
-    />
-  </Tabs.Navigator>
-);
 
 const App: React.FC = () => {
+  useEffect(() => {
+    if (PLATFORM.isAndroid) {
+      SplashScreen.hide();
+    }
+  }, []);
+
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Welcome"
-          screenOptions={{ headerShown: false }}
-        >
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
-          <Stack.Screen
-            name="Create"
-            component={CreateScreen}
-            initialParams={{ isFirstOpen: false }}
-            options={{
-              animation: "slide_from_left",
+    <RootProvider>
+      <SafeAreaProvider>
+        <StatusBar animated barStyle="light-content" />
+        <NavigationContainer theme={theme}>
+          <Stack.Navigator
+            initialRouteName="FirstOnboarding"
+            screenOptions={{
+              headerShown: false,
+              animation: "slide_from_right",
             }}
-          />
-          <Stack.Screen name="TabRoot" component={TabsNavigator} />
-          <Stack.Screen
-            name="TransparentTodo"
-            component={TodoScreen}
-            options={{
-              presentation: "containedTransparentModal",
-              animation: "slide_from_bottom",
-            }}
-          />
-          <Stack.Screen
-            name="Todo"
-            component={TodoScreen}
-            options={{
-              presentation: "modal",
-              animation: "slide_from_bottom",
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+          >
+            <Stack.Screen
+              name="FirstOnboarding"
+              component={FirstOnboardingScreen}
+            />
+            <Stack.Screen
+              name="SecondOnboarding"
+              component={SecondOnboardingScreen}
+            />
+            <Stack.Screen
+              name="ThirdOnboarding"
+              component={ThirdOnboardingScreen}
+            />
+            <Stack.Screen name="TabsRoot" component={TabsNavigator} />
+            <Stack.Screen name="TodoScreen" component={TodoScreen} />
+            <Stack.Screen
+              name="CreateEditTodo"
+              options={{
+                presentation: PLATFORM.isIOS ? "modal" : "card",
+                animation: "slide_from_bottom",
+                gestureDirection: "vertical",
+              }}
+              component={CreateEditTodo}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </RootProvider>
   );
 };
+
+const TabsNavigator: React.FC = () => {
+  return (
+    <Tabs.Navigator
+      initialRouteName="TodosScreen"
+      screenOptions={{
+        tabBarActiveTintColor: COLORS.white,
+        tabBarInactiveTintColor: COLORS.white,
+        tabBarStyle: styles.bottomHeader,
+      }}
+    >
+      <Tabs.Screen
+        name="TodosScreen"
+        component={TodosScreen}
+        options={{
+          headerTitle: "Todos",
+          tabBarLabel: "Todos",
+          tabBarIcon: ({ focused }) => {
+            const Icon = focused ? HomeSolidIcon : HomeIcon;
+
+            return (
+              <Icon
+                color={COLORS.white}
+                width={widthPixel(24)}
+                height={heightPixel(24)}
+              />
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="CreateEditTodoPlug"
+        component={CreateEditTodoPlug}
+        options={{
+          tabBarButton: AddTodoButton,
+        }}
+      />
+      <Tabs.Screen
+        name="SettingsScreen"
+        component={Settings}
+        options={{
+          headerTitle: "Settings",
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ focused }) => {
+            const Icon = focused ? SettingsSolidIcon : SettingsIcon;
+
+            return (
+              <Icon
+                width={widthPixel(28)}
+                height={heightPixel(28)}
+                color={COLORS.white}
+              />
+            );
+          },
+        }}
+      />
+    </Tabs.Navigator>
+  );
+};
+
+const styles = StyleSheet.create({
+  bottomHeader: {
+    backgroundColor: COLORS.cardBackground,
+  },
+});
 
 export default App;
