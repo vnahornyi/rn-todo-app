@@ -37,7 +37,7 @@ export default Chip;
 
 const styles = StyleSheet.create({
   chip: {
-    paddingVertical: pixelSizeVertical(4),
+    paddingVertical: pixelSizeVertical(8),
     paddingHorizontal: pixelSizeHorizontal(8),
     borderRadius: 4,
     flexDirection: "row",

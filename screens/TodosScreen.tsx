@@ -1,38 +1,30 @@
-import { useCallback, useState } from "react";
-import { StyleSheet, FlatList, ListRenderItemInfo } from "react-native";
+import { useCallback } from "react";
+import {
+  StyleSheet,
+  FlatList,
+  ListRenderItemInfo,
+  Platform,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import DeviceInfo from "react-native-device-info";
 
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
+import { TodoType } from "../providers/todosProvider";
+import useTodos from "../hooks/useTodos";
 
 import Empty from "../components/Empty";
 import TodoCard from "../components/TodoCard";
-
-export type TodoType = {
-  id: number;
-  title: string;
-  description: string;
-  isCompleted: boolean;
-};
+import COLORS from "../constants/colors";
 
 const TodosScreen: React.FC = () => {
-  const [todos, setTodos] = useState<TodoType[]>([
-    {
-      id: 1,
-      title: "todo",
-      description: "desc",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Todo 2",
-      description: "description 2",
-      isCompleted: false,
-    },
-  ]);
+  const { todos, completeTodo } = useTodos();
 
   const renderItem = useCallback(
     (props: ListRenderItemInfo<TodoType>) => (
-      <TodoCard {...props.item} setCompleted={() => {}} />
+      <TodoCard
+        {...props.item}
+        setCompleted={(status: boolean) => completeTodo(props.item.id, status)}
+      />
     ),
     []
   );
@@ -56,6 +48,10 @@ export default TodosScreen;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    backgroundColor:
+      DeviceInfo.hasNotch() && Platform.Version < "16"
+        ? COLORS.blue
+        : undefined,
   },
   listContainer: {
     paddingVertical: pixelSizeVertical(12),

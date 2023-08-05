@@ -2,16 +2,16 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import { TodoType } from "../screens/TodosScreen";
 import { RootScreensType } from "../App";
 
 import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
+import { TodoType } from "../providers/todosProvider";
+import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 
 import EducationIcon from "../assets/images/icons/education.svg";
 import CheckBox from "../UI/CheckBox";
 import Chip from "../UI/Chip";
-import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 
 type TodoCardPropsType = TodoType & {
   setCompleted: React.ComponentProps<typeof CheckBox>["onChange"];
@@ -22,12 +22,16 @@ type TodosScreenNavigationProp = NativeStackNavigationProp<
   "TodosScreen"
 >;
 
-const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
-  const { isCompleted, title } = props;
+const TodoCard: React.FC<TodoCardPropsType> = ({
+  setCompleted,
+  isCompleted,
+  title,
+  id,
+}) => {
   const navigation = useNavigation<TodosScreenNavigationProp>();
 
   const handleOpenTodo = () => {
-    navigation.navigate("TodoScreen", props);
+    navigation.navigate("TodoScreen", { todoId: id });
   };
 
   return (
@@ -36,7 +40,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({ setCompleted, ...props }) => {
       activeOpacity={0.8}
       style={styles.card}
     >
-      <CheckBox initialValue={isCompleted} onChange={setCompleted} />
+      <CheckBox value={isCompleted} onChange={setCompleted} />
       <View style={styles.content}>
         <Text style={TYPOGRAPHY.body}>{title}</Text>
         <View style={styles.bottomPart}>
@@ -59,6 +63,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: pixelSizeHorizontal(10),
     alignItems: "center",
     gap: pixelSizeHorizontal(12),
+    shadowColor: COLORS.cardBackground,
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 2,
+    elevation: 4,
   },
   bottomPart: {
     flexDirection: "row",

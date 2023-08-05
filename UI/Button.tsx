@@ -34,6 +34,7 @@ const Button: React.FC<PropsType> = ({
         paddingHorizontal: variant === "ghost" ? 0 : pixelSizeHorizontal(24),
       },
       textStyles: {
+        ...styles.text,
         ...TYPOGRAPHY.body,
         color: textColor,
       },
@@ -61,5 +62,8 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
     backgroundColor: "transparent",
     borderRadius: 4,
+  },
+  text: {
+    textAlign: "center",
   },
 });

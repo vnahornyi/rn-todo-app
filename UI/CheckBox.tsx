@@ -6,28 +6,25 @@ import COLORS from "../constants/colors";
 import { moderatePixel } from "../utils/normalize";
 
 type CheckBoxPropsType = {
-  initialValue?: boolean;
-  onChange?: (status: boolean) => void;
+  value: boolean;
+  onChange: (status: boolean) => void;
 };
 
-const CheckBox: React.FC<CheckBoxPropsType> = ({ initialValue, onChange }) => {
-  const [isChecked, setChecked] = useBoolean(initialValue);
-
+const CheckBox: React.FC<CheckBoxPropsType> = ({ value, onChange }) => {
   const handleCheck = () => {
-    setChecked.toggle();
-    onChange && onChange(!isChecked);
+    onChange(!value);
   };
 
   return (
     <TouchableOpacity
       style={{
         ...styles.checkbox,
-        borderColor: isChecked ? COLORS.primary : COLORS.white,
+        borderColor: value ? COLORS.primary : COLORS.white,
       }}
       activeOpacity={0.8}
       onPress={handleCheck}
     >
-      {isChecked && <CheckIcon color={COLORS.primary} />}
+      {value && <CheckIcon color={COLORS.primary} />}
     </TouchableOpacity>
   );
 };

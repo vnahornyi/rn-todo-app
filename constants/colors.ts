@@ -7,8 +7,11 @@ const blue = "#809CFF";
 const red = "#FF8080";
 const yellow = "#FFCC80";
 
+const backgroundUnderModal = "rgba(0, 0, 0, 0.74)";
 const background = "#121212";
 const cardBackground = "#363636";
+const borderColor = "#979797";
+const error = "#FF4949";
 
 const COLORS = {
   blue,
@@ -17,6 +20,9 @@ const COLORS = {
   white,
   black,
   background,
+  error,
+  borderColor,
+  backgroundUnderModal,
   gray,
   cardBackground,
   shadowColor: black,
