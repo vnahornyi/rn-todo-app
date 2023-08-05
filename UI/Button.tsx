@@ -13,6 +13,13 @@ type PropsType = {
   disabled?: boolean;
 };
 
+const ghostHitSlop = {
+  top: pixelSizeVertical(12),
+  bottom: pixelSizeVertical(12),
+  right: pixelSizeHorizontal(24),
+  left: pixelSizeHorizontal(24),
+};
+
 const Button: React.FC<PropsType> = ({
   onPress,
   title,
@@ -43,6 +50,7 @@ const Button: React.FC<PropsType> = ({
 
   return (
     <TouchableOpacity
+      hitSlop={variant === "ghost" ? ghostHitSlop : undefined}
       onPress={onPress}
       activeOpacity={0.8}
       style={buttonStyles}

@@ -70,7 +70,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
           <TrashIcon
             width={moderatePixel(24)}
             height={moderatePixel(24)}
-            color={COLORS.red}
+            color={COLORS.error}
           />
           <Text style={styles.deleteText}>Delete Task</Text>
         </TouchableOpacity>
