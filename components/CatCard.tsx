@@ -1,5 +1,6 @@
 import { memo, useMemo } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import FastImage from "react-native-fast-image";
 
 import { pixelSizeVertical } from "../utils/normalize";
 import { CatType } from "../providers/AppProvider";
@@ -35,11 +36,13 @@ const CatCard: React.FC<PropsType> = ({
 
   return (
     <View style={cardStyles}>
-      <Image
+      <FastImage
         source={{
           uri: `https://cdn2.thecatapi.com/images/${reference_image_id}.jpg`,
+          priority: FastImage.priority.normal,
         }}
         style={styles.image}
+        resizeMode={FastImage.resizeMode.cover}
       />
       <Text style={nameStyles}>{name}</Text>
     </View>

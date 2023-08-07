@@ -1056,6 +1056,84 @@ library {
 }
 library {
   maven_library {
+    groupId: "com.github.bumptech.glide"
+    artifactId: "glide"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "j\342\224J\333b\227\177\345?B\304\370j\"\2752l\030(\266\223D\034\314\3440\351/\024\203\204"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "com.github.bumptech.glide"
+    artifactId: "gifdecoder"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "\031z\034\325\267hU\252\002\2620\3019t\342\223\"\233\220\035\302\271o\253C\025 \036x\272\250\004"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "com.github.bumptech.glide"
+    artifactId: "disklrucache"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "o\f\311\006\226F\254X.\347\215\277b\036\2200>\242\000\271\316A\302\n\303h\351%\355Ecy"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "com.github.bumptech.glide"
+    artifactId: "annotations"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "\372C\f\277\217\223\037\315\211\303\201\225\253UD\357Mb\310\254l.oI\370\364\256x`\372\336\216"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.exifinterface"
+    artifactId: "exifinterface"
+    version: "1.2.0"
+  }
+  digests {
+    sha256: "\252\346\216Q0\225\344u\247g\005V\352\313\247r\354+\265\222\321q\207\t\025x\323\376\371G\256\247"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "com.github.bumptech.glide"
+    artifactId: "okhttp3-integration"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "\rr.\364\332\227\037=\t\352\a5\035\323\251\377s\017\261{C\213\035MtO\232(\246\315\326 "
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
     groupId: "androidx.coordinatorlayout"
     artifactId: "coordinatorlayout"
     version: "1.1.0"
@@ -1585,52 +1663,75 @@ library_dependencies {
 }
 library_dependencies {
   library_index: 81
-  library_dep_index: 3
-  library_dep_index: 4
-  library_dep_index: 26
-  library_dep_index: 2
+  library_dep_index: 82
+  library_dep_index: 83
+  library_dep_index: 84
+  library_dep_index: 24
+  library_dep_index: 14
+  library_dep_index: 85
 }
 library_dependencies {
   library_index: 82
   library_dep_index: 3
-  library_dep_index: 16
-  library_dep_index: 83
-  library_dep_index: 81
-  library_dep_index: 4
-  library_dep_index: 24
-  library_dep_index: 6
-  library_dep_index: 84
-  library_dep_index: 85
-  library_dep_index: 13
-  library_dep_index: 86
 }
 library_dependencies {
-  library_index: 83
+  library_index: 85
   library_dep_index: 3
 }
 library_dependencies {
-  library_index: 84
+  library_index: 86
+  library_dep_index: 81
+  library_dep_index: 60
+  library_dep_index: 3
+}
+library_dependencies {
+  library_index: 87
   library_dep_index: 3
   library_dep_index: 4
   library_dep_index: 26
   library_dep_index: 2
 }
 library_dependencies {
-  library_index: 85
+  library_index: 88
+  library_dep_index: 3
+  library_dep_index: 16
+  library_dep_index: 89
+  library_dep_index: 87
+  library_dep_index: 4
+  library_dep_index: 24
+  library_dep_index: 6
+  library_dep_index: 90
+  library_dep_index: 91
+  library_dep_index: 13
+  library_dep_index: 92
+}
+library_dependencies {
+  library_index: 89
+  library_dep_index: 3
+}
+library_dependencies {
+  library_index: 90
+  library_dep_index: 3
+  library_dep_index: 4
+  library_dep_index: 26
+  library_dep_index: 2
+}
+library_dependencies {
+  library_index: 91
   library_dep_index: 3
   library_dep_index: 4
   library_dep_index: 2
 }
 library_dependencies {
-  library_index: 86
+  library_index: 92
   library_dep_index: 3
   library_dep_index: 24
-  library_dep_index: 84
+  library_dep_index: 90
   library_dep_index: 4
   library_dep_index: 2
 }
 library_dependencies {
-  library_index: 87
+  library_index: 93
   library_dep_index: 62
   library_dep_index: 3
   library_dep_index: 4
@@ -1642,13 +1743,15 @@ module_dependencies {
   dependency_index: 16
   dependency_index: 71
   dependency_index: 72
+  dependency_index: 81
+  dependency_index: 86
   dependency_index: 62
   dependency_index: 67
   dependency_index: 24
-  dependency_index: 81
-  dependency_index: 36
-  dependency_index: 82
   dependency_index: 87
+  dependency_index: 36
+  dependency_index: 88
+  dependency_index: 93
 }
 repositories {
   maven_repo {

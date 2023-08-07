@@ -81,18 +81,18 @@ const CatsScreen: React.FC = () => {
       {loading === "fullfiled" && (
         <FlatList
           key={columns}
-          removeClippedSubviews
           stickyHeaderHiddenOnScroll
           ListHeaderComponent={renderHeader()}
           stickyHeaderIndices={[0]}
           numColumns={columns}
           style={styles.list}
           data={cats}
+          initialNumToRender={columns * 5}
+          maxToRenderPerBatch={columns * 5}
+          updateCellsBatchingPeriod={300 / columns}
+          windowSize={3}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
-          maxToRenderPerBatch={30}
-          initialNumToRender={10}
-          windowSize={3}
           getItemLayout={getItemLayout}
         />
       )}
