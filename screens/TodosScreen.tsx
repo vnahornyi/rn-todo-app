@@ -29,12 +29,14 @@ const TodosScreen: React.FC = () => {
     []
   );
 
+  const keyExtractor = useCallback((todo: TodoType) => todo.id.toString(), []);
+
   return (
     <SafeAreaView style={styles.container}>
       <Empty isEmpty={!todos.length}>
         <FlatList
           data={todos}
-          keyExtractor={(todo) => todo.id.toString()}
+          keyExtractor={keyExtractor}
           renderItem={renderItem}
           contentContainerStyle={styles.listContainer}
         />
