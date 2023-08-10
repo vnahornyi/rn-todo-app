@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.todoapp",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 210000500,
+      "versionName": "0.5.0",
+      "outputFile": "app-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}
