@@ -6,11 +6,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import SplashScreen from "react-native-splash-screen";
 
+import useTodos from "@todoapp/shared/src/hooks/useTodos";
 import { heightPixel, widthPixel } from "./utils/normalize";
 import theme from "./constants/theme";
 import COLORS from "./constants/colors";
 import PLATFORM from "./constants/platform";
 import { TodoType } from "@todoapp/shared/src/providers/TodosProvider";
+import RootProvider from "@todoapp/shared/src/providers";
 
 import FirstOnboardingScreen from "./screens/intro/FirstOnboardingScreen";
 import SecondOnboardingScreen from "./screens/intro/SecondOnboardingScreen";
@@ -21,15 +23,16 @@ import TodoScreen from "./screens/TodoScreen";
 import Settings from "./screens/Settings";
 import CreateEditTodo from "./screens/CreateEditTodo";
 import CatsScreen from "./screens/CatsScreen";
+import FormScreen from "./screens/FormScreen";
 
-import RootProvider from "@todoapp/shared/src/providers";
 import AddTodoButton from "./components/AddTodoButton";
 import HomeIcon from "./assets/images/icons/home.svg";
 import HomeSolidIcon from "./assets/images/icons/home-solid.svg";
 import SettingsIcon from "./assets/images/icons/settings.svg";
 import SettingsSolidIcon from "./assets/images/icons/settings-solid.svg";
 import PetsIcon from "./assets/images/icons/pets.svg";
-import useTodos from "@todoapp/shared/src/hooks/useTodos";
+import DocumentIcon from "./assets/images/icons/document.svg";
+import DocumentSolidIcon from "./assets/images/icons/document-solid.svg";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -42,7 +45,7 @@ export type RootScreensType = {
   CreateEditTodo?: TodoType;
   SettingsScreen: undefined;
   Cats: undefined;
-  PlugScreen: undefined;
+  FormScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootScreensType>();
@@ -157,13 +160,13 @@ const TabsNavigator: React.FC = () => {
         }}
       />
       <Tabs.Screen
-        name="PlugScreen"
-        component={Settings}
+        name="FormScreen"
+        component={FormScreen}
         options={{
-          headerTitle: "Plug",
-          tabBarLabel: "Plug",
+          headerTitle: "Form",
+          tabBarLabel: "Form",
           tabBarIcon: ({ focused }) => {
-            const Icon = focused ? SettingsSolidIcon : SettingsIcon;
+            const Icon = focused ? DocumentSolidIcon : DocumentIcon;
 
             return (
               <Icon

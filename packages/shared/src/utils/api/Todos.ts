@@ -1,6 +1,7 @@
-import { Alert } from "react-native";
+import { z } from "zod";
 
-import { TodoType } from "../../providers/TodosProvider";
+import { TodoType, TodoSchema } from "../../types/todos";
+import errorAlert from "../errorAlert";
 
 class Todos {
   async loadAll(): Promise<TodoType[]> {
@@ -8,11 +9,15 @@ class Todos {
       const response = await fetch(
         "https://my-json-server.typicode.com/vnahornyi/rn-todo-app-json-placeholder/todos"
       );
-      const todos = await response.json();
+      const unparsedTodos = await response.json();
+      const todos = TodoSchema.array().parse(unparsedTodos);
 
       return todos;
-    } catch (error: any) {
-      Alert.alert(error.message);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        errorAlert(error.message);
+      }
+
       return [];
     }
   }
@@ -35,11 +40,15 @@ class Todos {
           },
         }
       );
-      const updated = await response.json();
+      const unparsedTodo = await response.json();
+      const updated = TodoSchema.parse(unparsedTodo);
 
       return updated;
-    } catch (error: any) {
-      Alert.alert(error.message);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        errorAlert(error.message);
+      }
+
       return null;
     }
   }
@@ -56,11 +65,15 @@ class Todos {
           },
         }
       );
-      const created = await response.json();
+      const unparsedTodo = await response.json();
+      const created = TodoSchema.parse(unparsedTodo);
 
       return created;
-    } catch (error: any) {
-      Alert.alert(error.message);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        errorAlert(error.message);
+      }
+
       return null;
     }
   }
@@ -76,8 +89,11 @@ class Todos {
       await response.json();
 
       return true;
-    } catch (error: any) {
-      Alert.alert(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        errorAlert(error.message);
+      }
+
       return false;
     }
   }
