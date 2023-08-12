@@ -1,16 +1,10 @@
 import { createContext, useState } from "react";
 import { ProviderPropsType } from ".";
 import Todos from "../utils/api/Todos";
-
-export type TodoType = {
-  id: number;
-  title: string;
-  description: string;
-  isCompleted: boolean;
-};
+import { TodoType } from "../types/todos";
 
 type TodosStateType = {
-  todos: Array<TodoType>;
+  todos: TodoType[];
 };
 
 type ContextType = TodosStateType & {

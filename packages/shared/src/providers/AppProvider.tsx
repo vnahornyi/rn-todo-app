@@ -2,22 +2,9 @@ import { createContext, useCallback, useState } from "react";
 
 import { ProviderPropsType } from ".";
 import Cats from "../utils/api/Cats";
+import { CatType } from "../types/cats";
 
 type LoadingStatusType = "idle" | "pending" | "fullfiled" | "rejected";
-
-export type CatImageType = {
-  id: string;
-  url: string;
-  width: number;
-  height: number;
-};
-
-export type CatType = {
-  id: string;
-  name: string;
-  description: string;
-  reference_image_id: string;
-};
 
 export type AppStateType = {
   cats: CatType[];
