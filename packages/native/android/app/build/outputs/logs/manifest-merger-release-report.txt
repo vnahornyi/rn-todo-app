@@ -12,6 +12,7 @@ MERGED from [:react-native-fast-image] /Users/vnahornyi/Developer/Github/vnahorn
 MERGED from [:react-native-safe-area-context] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -52,6 +53,7 @@ MERGED from [com.facebook.fresco:soloader:2.5.0] /Users/vnahornyi/.gradle/caches
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/vnahornyi/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/cde464ada6bf8e4db1ce6a3edaecd38a/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/c87b97424659a3cc7da5af62d81a0b78/transformed/jetified-core-ktx-1.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/vnahornyi/.gradle/caches/transforms-3/260dd5db743bb06c86e4eb5d3be9b6dd/transformed/webkit-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/424f890fe8622dde08059ad036b58b7e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vnahornyi/.gradle/caches/transforms-3/dfc6ab3249e5535f070488292c345975/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -108,6 +110,8 @@ application
 ADDED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/packages/native/android/app/src/main/AndroidManifest.xml:5:5-24:19
 MERGED from [:react-native-community_datetimepicker] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
 MERGED from [:react-native-community_datetimepicker] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
+MERGED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
+MERGED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
 MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/9300c7fc5aff0974f1ee709fb212c45e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/vnahornyi/.gradle/caches/transforms-3/7f8a12fa5e11d275ef7433bff5c1ada3/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:10:5-14:19
@@ -198,6 +202,8 @@ MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/
 MERGED from [:react-native-screens] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-svg] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/3fe5d6501137c79a3ce5eb04c421dbfd/transformed/jetified-react-android-0.72.3-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.3] /Users/vnahornyi/.gradle/caches/transforms-3/e290a9643a9793d8d18dbe6d97e15b71/transformed/jetified-hermes-android-0.72.3-release/AndroidManifest.xml:5:5-44
@@ -278,6 +284,8 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahorny
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/cde464ada6bf8e4db1ce6a3edaecd38a/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/c87b97424659a3cc7da5af62d81a0b78/transformed/jetified-core-ktx-1.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.5.0] /Users/vnahornyi/.gradle/caches/transforms-3/c87b97424659a3cc7da5af62d81a0b78/transformed/jetified-core-ktx-1.5.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/vnahornyi/.gradle/caches/transforms-3/260dd5db743bb06c86e4eb5d3be9b6dd/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/vnahornyi/.gradle/caches/transforms-3/260dd5db743bb06c86e4eb5d3be9b6dd/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/80a0138e8c60a7516785efaf8dfd795a/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vnahornyi/.gradle/caches/transforms-3/424f890fe8622dde08059ad036b58b7e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -346,6 +354,22 @@ INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/packages/n
 		INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/packages/native/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/packages/native/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/packages/native/android/app/src/main/AndroidManifest.xml
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-64
+	android:exported
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-83
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-15:63
+	android:resource
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:17-60
+	android:name
+		ADDED from [:react-native-webview] /Users/vnahornyi/Developer/Github/vnahornyi/rn_todo_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:17-67
 meta-data#com.bumptech.glide.integration.okhttp3.OkHttpGlideModule
 ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/vnahornyi/.gradle/caches/transforms-3/7f8a12fa5e11d275ef7433bff5c1ada3/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
 	android:value
