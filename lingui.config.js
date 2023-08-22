@@ -4,6 +4,11 @@ module.exports = {
   catalogs: [
     {
       path: "<rootDir>/shared/locales/{locale}/messages",
+      include: [
+        "<rootDir>/web/**",
+        "<rootDir>/native/**",
+        "<rootDir>/shared/**",
+      ],
     },
   ],
   format: "po",

@@ -1,3 +1,5 @@
+import React from "react";
+
 import AppProvider from "./AppProvider";
 import LocalesProvider from "./LocalesProvider";
 import TodosProvider from "./TodosProvider";

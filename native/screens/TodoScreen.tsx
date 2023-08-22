@@ -23,6 +23,7 @@ import TrashIcon from "../assets/images/icons/trash.svg";
 import CheckBox from "../UI/CheckBox";
 import Button from "../UI/Button";
 import BackButton from "../components/BackButton";
+import { t } from "@lingui/macro";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
@@ -76,7 +77,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
         </TouchableOpacity>
       </ScrollView>
       <View style={styles.bottomBtn}>
-        <Button title="Edit Task" onPress={handleOpenEdit} />
+        <Button title={t`Edit Task`} onPress={handleOpenEdit} />
       </View>
     </SafeAreaView>
   );

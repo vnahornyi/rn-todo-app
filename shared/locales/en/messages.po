@@ -7,5 +7,56 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
 
-msgid "Test"
-msgstr "Test"
+msgid "Edit Task"
+msgstr "Edit Task"
+
+msgid "This field is required"
+msgstr "This field is required"
+
+msgid "Should be not more than 50"
+msgstr "Should be not more than 50"
+
+msgid "Should be more than 2"
+msgstr "Should be more than 2"
+
+msgid "Should be less than 10"
+msgstr "Should be less than 10"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "User Name"
+msgstr "User Name"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Task's name"
+msgstr "Task's name"
+
+msgid "What do you want to do?"
+msgstr "What do you want to do?"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Edit Todo"
+msgstr "Edit Todo"
+
+msgid "Create Todo"
+msgstr "Create Todo"
+
+msgid "Cats"
+msgstr "Cats"
+
+msgid "Add Task"
+msgstr "Add Task"
+
+msgid "Todo:"
+msgstr "Todo:"
+
+msgid "Description:"
+msgstr "Description:"
+
+msgid "{count, plural, one {# cat} other {# cats}}"
+msgstr "{count, plural, one {# cat} other {# cats}}"

@@ -9,9 +9,10 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-
+import { Trans, t } from "@lingui/macro";
 import { useState } from "react";
 
+import useLocale from "../../shared/hooks/useLocale";
 import { moderatePixel, pixelSizeVertical } from "../utils/normalize";
 import TYPOGRAPHY from "../constants/typography";
 import COLORS from "../constants/colors";
@@ -30,11 +31,16 @@ const CreateEditTodo: React.FC<CreateEditTodoPropsType> = ({
   navigation,
   route,
 }) => {
+  const { i18n } = useLocale();
   const { addTodo, editTodo } = useTodos();
   const [title, setTitle] = useState(route.params?.title ?? "");
   const [description, setDescription] = useState(
     route.params?.description ?? ""
   );
+
+  const submitLabel = route.params?.id
+    ? t(i18n)`Edit Todo`
+    : t(i18n)`Create Todo`;
 
   const handleSubmit = () => {
     if (!title.trim() || !description.trim()) return;
@@ -69,36 +75,39 @@ const CreateEditTodo: React.FC<CreateEditTodoPropsType> = ({
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.container}>
             <View style={styles.topPart}>
-              <Text style={TYPOGRAPHY.title}>Add Task</Text>
-              <Text style={TYPOGRAPHY.body}>Todo:</Text>
+              <Text style={TYPOGRAPHY.title}>
+                <Trans>Add Task</Trans>
+              </Text>
+              <Text style={TYPOGRAPHY.body}>
+                <Trans>Todo:</Trans>
+              </Text>
               <TextInput
                 style={styles.input}
                 value={title}
                 onChangeText={setTitle}
-                placeholder="Task's name"
+                placeholder={t(i18n)`Task's name`}
                 maxLength={50}
                 placeholderTextColor={COLORS.gray}
               />
-              <Text style={TYPOGRAPHY.body}>Description:</Text>
+              <Text style={TYPOGRAPHY.body}>
+                <Trans>Description:</Trans>
+              </Text>
               <TextInput
                 style={styles.input}
                 value={description}
                 onChangeText={setDescription}
                 maxLength={200}
-                placeholder="What do you want to do?"
+                placeholder={t(i18n)`What do you want to do?`}
                 placeholderTextColor={COLORS.gray}
               />
             </View>
             <View style={styles.bottomBtns}>
               <Button
                 variant="ghost"
-                title="Cancel"
+                title={t(i18n)`Cancel`}
                 onPress={navigation.goBack}
               />
-              <Button
-                title={`${route.params?.id ? "Edit" : "Create"} Todo`}
-                onPress={handleSubmit}
-              />
+              <Button title={submitLabel} onPress={handleSubmit} />
             </View>
           </View>
         </TouchableWithoutFeedback>

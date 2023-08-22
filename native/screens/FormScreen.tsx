@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { Trans } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import PLATFORM from "../constants/platform";
@@ -58,18 +58,21 @@ const FormScreen: React.FC = () => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.content}>
             <Text style={TYPOGRAPHY.largeTitle}>
-              <Trans>Test</Trans>
+              <Trans>test</Trans>
             </Text>
             <Controller
               control={control}
               name="name"
               rules={{
-                required: { value: true, message: "This field is required" },
-                maxLength: { value: 50, message: "Should be not more than 50" },
+                required: { value: true, message: t`This field is required` },
+                maxLength: {
+                  value: 50,
+                  message: t`Should be not more than 50`,
+                },
               }}
               render={({ field }) => (
                 <Input
-                  label="User Name"
+                  label={t`User Name`}
                   value={field.value}
                   onChangeText={field.onChange}
                   onBlur={field.onBlur}
@@ -81,13 +84,13 @@ const FormScreen: React.FC = () => {
               control={control}
               name="password"
               rules={{
-                required: { value: true, message: "This field is required" },
-                minLength: { value: 3, message: "Should be more than 2" },
-                maxLength: { value: 10, message: "Should be less than 10" },
+                required: { value: true, message: t`This field is required` },
+                minLength: { value: 3, message: t`Should be more than 2` },
+                maxLength: { value: 10, message: t`Should be less than 10` },
               }}
               render={({ field }) => (
                 <Input
-                  label="Password"
+                  label={t`Password`}
                   value={field.value}
                   onChangeText={field.onChange}
                   onBlur={field.onBlur}
@@ -112,7 +115,7 @@ const FormScreen: React.FC = () => {
         </TouchableWithoutFeedback>
       </ScrollView>
       <View style={styles.footer}>
-        <Button title="Send" onPress={handleSubmit(onSubmit)} />
+        <Button title={t`Send`} onPress={handleSubmit(onSubmit)} />
       </View>
     </KeyboardAvoidingView>
   );

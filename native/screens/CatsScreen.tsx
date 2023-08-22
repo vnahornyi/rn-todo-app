@@ -6,6 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { Plural } from "@lingui/macro";
 import { useCallback, useEffect, useState } from "react";
 
 import useAppState from "../../shared/hooks/useAppState";
@@ -54,6 +55,11 @@ const CatsScreen: React.FC = () => {
           color={columns === 3 ? "primary" : "secondary"}
           onPress={() => setColumns(3)}
         />
+        <View>
+          <Text>
+            <Plural value={10} one="# book" other="# books" />
+          </Text>
+        </View>
       </View>
     );
   }, [columns]);

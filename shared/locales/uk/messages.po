@@ -7,5 +7,56 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Language: uk\n"
 
-msgid "Test"
-msgstr "Тест"
+msgid "Edit Task"
+msgstr "Змінити завдання"
+
+msgid "This field is required"
+msgstr "Це поле є обовʼязковим"
+
+msgid "Should be not more than 50"
+msgstr "Повинно бути не більше ніж 50"
+
+msgid "Should be more than 2"
+msgstr "Повинно бути більше 2"
+
+msgid "Should be less than 10"
+msgstr "Повинно бути менше 10"
+
+msgid "Send"
+msgstr "Створити"
+
+msgid "User Name"
+msgstr "Імʼя користувача"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Task's name"
+msgstr "Імʼя задачі"
+
+msgid "What do you want to do?"
+msgstr "Що ви хочете зробити?"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Edit Todo"
+msgstr "Відредагувати"
+
+msgid "Create Todo"
+msgstr "Створити"
+
+msgid "Cats"
+msgstr "Пухнасті"
+
+msgid "Add Task"
+msgstr "Додати задачу"
+
+msgid "Todo:"
+msgstr "Задача:"
+
+msgid "Description:"
+msgstr "Опис:"
+
+msgid "{count, plural, one {# cat} other {# cats}}"
+msgstr "{count, plural, one {# кіт} other {# котів}}"
