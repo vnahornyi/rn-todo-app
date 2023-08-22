@@ -3,9 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useCallback } from "react";
 import { SvgProps } from "react-native-svg";
+import { t } from "@lingui/macro";
 
 import { RootScreensType } from "../App";
 import TYPOGRAPHY from "../constants/typography";
+import useLocale from "../../shared/hooks/useLocale";
 import {
   moderatePixel,
   pixelSizeHorizontal,
@@ -45,6 +47,7 @@ const Onboarding: React.FC<PropsType> = ({
   title,
   description,
 }) => {
+  const { i18n } = useLocale();
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
 
   const handleNext = () => {
@@ -62,7 +65,7 @@ const Onboarding: React.FC<PropsType> = ({
           <Button
             variant="ghost"
             color="secondary"
-            title="SKIP"
+            title={t(i18n)`SKIP`}
             onPress={handleSkip}
           />
         </View>
@@ -70,19 +73,21 @@ const Onboarding: React.FC<PropsType> = ({
         <View style={styles.bottomPart}>
           <Stepper step={step} />
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.description}>{description}</Text>
+          <Text style={styles.description}>
+            {description}
+          </Text>
         </View>
         <View style={styles.bottomTabs}>
           {navigation.canGoBack() && (
             <Button
-              title="BACK"
+              title={t(i18n)`BACK`}
               variant="ghost"
               color="secondary"
               onPress={navigation.goBack}
             />
           )}
           <View style={styles.next}>
-            <Button title="NEXT" onPress={handleNext} />
+            <Button title={t(i18n)`NEXT`} onPress={handleNext} />
           </View>
         </View>
       </View>

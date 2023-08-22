@@ -14,11 +14,11 @@ import { Trans, t } from "@lingui/macro";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import PLATFORM from "../constants/platform";
 import COLORS from "../constants/colors";
+import useLocale from "../../shared/hooks/useLocale";
 
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import DatePicker from "../UI/DatePicker";
-import TYPOGRAPHY from "../constants/typography";
 
 type FormType = {
   name: string;
@@ -27,6 +27,8 @@ type FormType = {
 };
 
 const FormScreen: React.FC = () => {
+  const { i18n } = useLocale();
+
   const {
     control,
     handleSubmit,
@@ -57,22 +59,22 @@ const FormScreen: React.FC = () => {
       <ScrollView style={styles.inputs}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.content}>
-            <Text style={TYPOGRAPHY.largeTitle}>
-              <Trans>test</Trans>
-            </Text>
             <Controller
               control={control}
               name="name"
               rules={{
-                required: { value: true, message: t`This field is required` },
+                required: {
+                  value: true,
+                  message: t(i18n)`This field is required`,
+                },
                 maxLength: {
                   value: 50,
-                  message: t`Should be not more than 50`,
+                  message: t(i18n)`Should be not more than 50`,
                 },
               }}
               render={({ field }) => (
                 <Input
-                  label={t`User Name`}
+                  label={t(i18n)`User Name`}
                   value={field.value}
                   onChangeText={field.onChange}
                   onBlur={field.onBlur}
@@ -84,13 +86,22 @@ const FormScreen: React.FC = () => {
               control={control}
               name="password"
               rules={{
-                required: { value: true, message: t`This field is required` },
-                minLength: { value: 3, message: t`Should be more than 2` },
-                maxLength: { value: 10, message: t`Should be less than 10` },
+                required: {
+                  value: true,
+                  message: t(i18n)`This field is required`,
+                },
+                minLength: {
+                  value: 3,
+                  message: t(i18n)`Should be more than 2`,
+                },
+                maxLength: {
+                  value: 10,
+                  message: t(i18n)`Should be less than 10`,
+                },
               }}
               render={({ field }) => (
                 <Input
-                  label={t`Password`}
+                  label={t(i18n)`Password`}
                   value={field.value}
                   onChangeText={field.onChange}
                   onBlur={field.onBlur}
@@ -115,7 +126,7 @@ const FormScreen: React.FC = () => {
         </TouchableWithoutFeedback>
       </ScrollView>
       <View style={styles.footer}>
-        <Button title={t`Send`} onPress={handleSubmit(onSubmit)} />
+        <Button title={t(i18n)`Send`} onPress={handleSubmit(onSubmit)} />
       </View>
     </KeyboardAvoidingView>
   );

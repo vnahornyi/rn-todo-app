@@ -12,6 +12,8 @@ import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import EducationIcon from "../assets/images/icons/education.svg";
 import CheckBox from "../UI/CheckBox";
 import Chip from "../UI/Chip";
+import { t } from "@lingui/macro";
+import useLocale from "../../shared/hooks/useLocale";
 
 type TodoCardPropsType = TodoType & {
   setCompleted: React.ComponentProps<typeof CheckBox>["onChange"];
@@ -28,6 +30,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
   title,
   id,
 }) => {
+  const { i18n } = useLocale();
   const navigation = useNavigation<TodosScreenNavigationProp>();
 
   const handleOpenTodo = () => {
@@ -44,12 +47,12 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
       <View style={styles.content}>
         <Text style={TYPOGRAPHY.body}>{title}</Text>
         <View style={styles.bottomPart}>
-          <Text style={styles.when}>Today At 16:45</Text>
+          <Text style={styles.when}>{t(i18n)`Today At`} 16:45</Text>
           <Chip
             iconColor={COLORS.primary}
             color="blue"
             Icon={EducationIcon}
-            name="University"
+            name={t(i18n)`University`}
           />
         </View>
       </View>

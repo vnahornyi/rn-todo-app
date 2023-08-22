@@ -33,6 +33,8 @@ import SettingsSolidIcon from "./assets/images/icons/settings-solid.svg";
 import PetsIcon from "./assets/images/icons/pets.svg";
 import DocumentIcon from "./assets/images/icons/document.svg";
 import DocumentSolidIcon from "./assets/images/icons/document-solid.svg";
+import { t } from "@lingui/macro";
+import useLocale from "../shared/hooks/useLocale";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -107,6 +109,8 @@ const Navigator: React.FC = () => {
 };
 
 const TabsNavigator: React.FC = () => {
+  const { i18n } = useLocale();
+
   return (
     <Tabs.Navigator
       initialRouteName="TodosScreen"
@@ -120,8 +124,8 @@ const TabsNavigator: React.FC = () => {
         name="TodosScreen"
         component={TodosScreen}
         options={{
-          headerTitle: "Todos",
-          tabBarLabel: "Todos",
+          headerTitle: t(i18n)`Todos`,
+          tabBarLabel: t(i18n)`Todos`,
           tabBarIcon: ({ focused }) => {
             const Icon = focused ? HomeSolidIcon : HomeIcon;
 
@@ -139,8 +143,8 @@ const TabsNavigator: React.FC = () => {
         name="Cats"
         component={CatsScreen}
         options={{
-          headerTitle: "Cats",
-          tabBarLabel: "Cats",
+          headerTitle: t(i18n)`Cats`,
+          tabBarLabel: t(i18n)`Cats`,
           tabBarIcon: () => {
             return (
               <PetsIcon
@@ -163,8 +167,8 @@ const TabsNavigator: React.FC = () => {
         name="FormScreen"
         component={FormScreen}
         options={{
-          headerTitle: "Form",
-          tabBarLabel: "Form",
+          headerTitle: t(i18n)`Form`,
+          tabBarLabel: t(i18n)`Form`,
           tabBarIcon: ({ focused }) => {
             const Icon = focused ? DocumentSolidIcon : DocumentIcon;
 
@@ -182,8 +186,8 @@ const TabsNavigator: React.FC = () => {
         name="SettingsScreen"
         component={Settings}
         options={{
-          headerTitle: "Settings",
-          tabBarLabel: "Settings",
+          headerTitle: t(i18n)`Settings`,
+          tabBarLabel: t(i18n)`Settings`,
           tabBarIcon: ({ focused }) => {
             const Icon = focused ? SettingsSolidIcon : SettingsIcon;
 

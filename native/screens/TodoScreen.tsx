@@ -1,3 +1,4 @@
+import { Trans, t } from "@lingui/macro";
 import { useCallback } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,17 +19,18 @@ import {
   pixelSizeHorizontal,
   pixelSizeVertical,
 } from "../utils/normalize";
+import useLocale from "../../shared/hooks/useLocale";
 
 import TrashIcon from "../assets/images/icons/trash.svg";
 import CheckBox from "../UI/CheckBox";
 import Button from "../UI/Button";
 import BackButton from "../components/BackButton";
-import { t } from "@lingui/macro";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
 const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   const { todoId } = route.params;
+  const { i18n } = useLocale();
   const { completeTodo, todos, deleteTodo } = useTodos();
   const todo = todos.find((todo) => todoId === todo.id);
 
@@ -73,11 +75,13 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
             height={moderatePixel(24)}
             color={COLORS.error}
           />
-          <Text style={styles.deleteText}>Delete Task</Text>
+          <Text style={styles.deleteText}>
+            <Trans>Delete Task</Trans>
+          </Text>
         </TouchableOpacity>
       </ScrollView>
       <View style={styles.bottomBtn}>
-        <Button title={t`Edit Task`} onPress={handleOpenEdit} />
+        <Button title={t(i18n)`Edit Task`} onPress={handleOpenEdit} />
       </View>
     </SafeAreaView>
   );

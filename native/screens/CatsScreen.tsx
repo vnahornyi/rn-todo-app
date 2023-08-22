@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { Plural } from "@lingui/macro";
+import { Plural, Trans } from "@lingui/macro";
 import { useCallback, useEffect, useState } from "react";
 
 import useAppState from "../../shared/hooks/useAppState";
@@ -55,11 +55,6 @@ const CatsScreen: React.FC = () => {
           color={columns === 3 ? "primary" : "secondary"}
           onPress={() => setColumns(3)}
         />
-        <View>
-          <Text>
-            <Plural value={10} one="# book" other="# books" />
-          </Text>
-        </View>
       </View>
     );
   }, [columns]);
@@ -81,8 +76,21 @@ const CatsScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
+      <View>
+        <Text style={styles.text}>
+          <Plural value={1} one="# cat" few="# cats" other="# cats" />
+        </Text>
+        <Text style={styles.text}>
+          <Plural value={3} one="# cat" few="# cats" other="# cats" />
+        </Text>
+        <Text style={styles.text}>
+          <Plural value={5} one="# cat" few="# cats" other="# cats" />
+        </Text>
+      </View>
       {loading === "rejected" && (
-        <Text style={styles.error}>Something wrong... Try reload app</Text>
+        <Text style={styles.error}>
+          <Trans>Something wrong... Try reload app</Trans>
+        </Text>
       )}
       {loading === "fullfiled" && (
         <FlatList
@@ -129,5 +137,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: COLORS.background,
+  },
+  text: {
+    color: "#ffffff",
   },
 });

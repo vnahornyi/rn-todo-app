@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import Button from "./Button";
 import useBoolean from "../../shared/hooks/useBoolean";
 import PLATFORM from "../constants/platform";
+import useLocale from "../../shared/hooks/useLocale";
 
 type DatePickerPropsType = {
   value: Date;
@@ -19,6 +20,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
   minimumDate,
   maximumDate,
 }) => {
+  const { currentLocale } = useLocale();
   const [isShow, setShow] = useBoolean();
 
   const handleSelect = (_: unknown, value: Date | undefined) => {
@@ -42,6 +44,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
       {isShow && (
         <DateTimePicker
           mode="date"
+          locale={currentLocale}
           display={PLATFORM.isIOS ? "inline" : "calendar"}
           value={value}
           themeVariant="dark"

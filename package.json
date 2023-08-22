@@ -20,6 +20,14 @@
     "lingui:compile": "lingui compile --typescript"
   },
   "dependencies": {
+    "@formatjs/intl-datetimeformat": "^6.10.0",
+    "@formatjs/intl-displaynames": "^6.5.0",
+    "@formatjs/intl-getcanonicallocales": "^2.2.1",
+    "@formatjs/intl-listformat": "^7.4.0",
+    "@formatjs/intl-locale": "^3.3.2",
+    "@formatjs/intl-numberformat": "^8.7.0",
+    "@formatjs/intl-pluralrules": "^5.2.4",
+    "@formatjs/intl-relativetimeformat": "^11.2.4",
     "@lingui/detect-locale": "^4.4.0",
     "@lingui/react": "^4.4.0",
     "@react-native-community/datetimepicker": "^7.4.1",
