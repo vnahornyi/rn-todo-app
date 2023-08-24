@@ -1,8 +1,9 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 import CheckIcon from "../assets/images/icons/check.svg";
-import COLORS from "../constants/colors";
 import { moderatePixel } from "../utils/normalize";
+import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 type CheckBoxPropsType = {
   value: boolean;
@@ -10,6 +11,9 @@ type CheckBoxPropsType = {
 };
 
 const CheckBox: React.FC<CheckBoxPropsType> = ({ value, onChange }) => {
+  const styles = useStyles();
+  const { colors } = useTheme();
+
   const handleCheck = () => {
     onChange(!value);
   };
@@ -20,22 +24,22 @@ const CheckBox: React.FC<CheckBoxPropsType> = ({ value, onChange }) => {
       activeOpacity={0.8}
       onPress={handleCheck}
     >
-      {value && <CheckIcon color={COLORS.primary} />}
+      {value && <CheckIcon color={colors.primary} />}
     </TouchableOpacity>
   );
 };
 
 export default CheckBox;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   checkbox: {
     width: moderatePixel(24),
     height: moderatePixel(24),
     borderWidth: 1.5,
     borderRadius: 9999,
-    borderColor: COLORS.white,
+    borderColor: colors.text,
   },
   checked: {
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
   },
-});
+}));

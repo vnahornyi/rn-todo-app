@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
 
 import { pixelSizeVertical } from "../utils/normalize";
@@ -7,6 +7,7 @@ import { CatType } from "../../shared/types/cats";
 import TYPOGRAPHY from "../constants/typography";
 import SIZES from "../constants/sizes";
 import calculateCatCardHeight from "../utils/calculateCatCardHeight";
+import createStyles from "../utils/createStyles";
 
 type PropsType = CatType & {
   columns: number;
@@ -18,6 +19,8 @@ const CatCard: React.FC<PropsType> = ({
 
   columns,
 }) => {
+  const styles = useStyles();
+
   const cardStyles = useMemo(
     () => [
       styles.card,
@@ -30,7 +33,7 @@ const CatCard: React.FC<PropsType> = ({
   );
 
   const nameStyles = useMemo(
-    () => (columns < 2 ? TYPOGRAPHY.title : TYPOGRAPHY.body),
+    () => [styles.title, columns < 2 ? TYPOGRAPHY.title : TYPOGRAPHY.body],
     [columns]
   );
 
@@ -51,7 +54,7 @@ const CatCard: React.FC<PropsType> = ({
 
 export default memo(CatCard);
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   card: {
     paddingBottom: pixelSizeVertical(12),
     alignItems: "center",
@@ -64,4 +67,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-});
+  title: {
+    color: colors.text,
+  },
+}));

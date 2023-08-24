@@ -4,21 +4,19 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   ScrollView,
-  StyleSheet,
-  Text,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { Trans, t } from "@lingui/macro";
+import { t } from "@lingui/macro";
 
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import PLATFORM from "../constants/platform";
-import COLORS from "../constants/colors";
 import useLocale from "../../shared/hooks/useLocale";
 
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import DatePicker from "../UI/DatePicker";
+import createStyles from "../utils/createStyles";
 
 type FormType = {
   name: string;
@@ -28,6 +26,7 @@ type FormType = {
 
 const FormScreen: React.FC = () => {
   const { i18n } = useLocale();
+  const styles = useStyles();
 
   const {
     control,
@@ -134,7 +133,7 @@ const FormScreen: React.FC = () => {
 
 export default FormScreen;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   fill: {
     flex: 1,
   },
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     gap: pixelSizeVertical(32),
   },
   footer: {
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
     paddingHorizontal: pixelSizeHorizontal(24),
     paddingBottom: pixelSizeVertical(44),
     paddingTop: pixelSizeVertical(12),
@@ -155,4 +154,4 @@ const styles = StyleSheet.create({
   datepicker: {
     width: "100%",
   },
-});
+}));

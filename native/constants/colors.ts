@@ -1,19 +1,24 @@
+import { Theme, DarkTheme } from "@react-navigation/native";
+
 const white = "#ffffff";
 const black = "#000000";
 const purple = "#8875FF";
 const whiteHalf = "rgba(255, 255, 255, 0.44)";
+const blackHalf = "rgba(0, 0, 0, 0.8)";
 const gray = "#AFAFAF";
 const blue = "#809CFF";
 const red = "#FF8080";
 const yellow = "#FFCC80";
 
 const backgroundUnderModal = "rgba(0, 0, 0, 0.74)";
-const background = "#121212";
-const cardBackground = "#363636";
+const background = "#FFFFFF";
+const darkBackground = "#121212";
+const cardBackground = "#FAFAFA";
+const darkCardBackground = "#363636";
 const borderColor = "#979797";
 const error = "#FF4949";
 
-const COLORS = {
+export const COLORS = {
   blue,
   red,
   yellow,
@@ -28,7 +33,16 @@ const COLORS = {
   shadowColor: black,
   modalBackground: black,
   primary: purple,
-  secondary: whiteHalf,
+  secondary: blackHalf,
+  text: black,
 };
 
-export default COLORS;
+export const DARK_COLORS = {
+  ...COLORS,
+  background: darkBackground,
+  cardBackground: darkCardBackground,
+  secondary: whiteHalf,
+  text: white,
+};
+
+export type ColorsType = typeof COLORS & typeof DARK_COLORS;

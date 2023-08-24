@@ -2,16 +2,9 @@ import { Trans, t } from "@lingui/macro";
 import { useCallback } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { RootScreensType } from "../App";
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import useTodos from "../../shared/hooks/useTodos";
 import {
@@ -25,11 +18,15 @@ import TrashIcon from "../assets/images/icons/trash.svg";
 import CheckBox from "../UI/CheckBox";
 import Button from "../UI/Button";
 import BackButton from "../components/BackButton";
+import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
 const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   const { todoId } = route.params;
+  const { colors } = useTheme();
+  const styles = useStyles();
   const { i18n } = useLocale();
   const { completeTodo, todos, deleteTodo } = useTodos();
   const todo = todos.find((todo) => todoId === todo.id);
@@ -61,7 +58,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
         <View style={styles.head}>
           <CheckBox value={todo.isCompleted} onChange={handleComplete} />
           <View style={styles.content}>
-            <Text style={TYPOGRAPHY.bigBody}>{todo.title}</Text>
+            <Text style={styles.title}>{todo.title}</Text>
             <Text style={styles.description}>{todo.description}</Text>
           </View>
         </View>
@@ -73,7 +70,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
           <TrashIcon
             width={moderatePixel(24)}
             height={moderatePixel(24)}
-            color={COLORS.error}
+            color={colors.error}
           />
           <Text style={styles.deleteText}>
             <Trans>Delete Task</Trans>
@@ -87,7 +84,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     flex: 1,
     paddingVertical: pixelSizeVertical(12),
@@ -110,9 +107,13 @@ const styles = StyleSheet.create({
   content: {
     gap: pixelSizeVertical(15),
   },
+  title: {
+    ...TYPOGRAPHY.bigBody,
+    color: colors.text,
+  },
   description: {
     ...TYPOGRAPHY.body,
-    color: COLORS.gray,
+    color: colors.secondary,
   },
   deleteBtn: {
     flexDirection: "row",
@@ -121,8 +122,8 @@ const styles = StyleSheet.create({
   },
   deleteText: {
     ...TYPOGRAPHY.body,
-    color: COLORS.error,
+    color: colors.error,
   },
-});
+}));
 
 export default TodoScreen;
