@@ -27,12 +27,10 @@ const Button: React.FC<PropsType> = ({
   color = "primary",
   disabled,
 }) => {
-  const { currentTheme, colors } = useTheme();
+  const { isLight, colors } = useTheme();
   const { buttonStyles, textStyles } = useMemo(() => {
     const textByTheme =
-      currentTheme === "light" && variant !== "contained"
-        ? colors.black
-        : colors.white;
+      isLight && variant !== "contained" ? colors.black : colors.white;
     const bgColor = variant === "contained" ? colors[color] : "transparent";
     const borderColor = variant === "outline" ? colors[color] : "transparent";
     const textColor = variant === "ghost" ? colors[color] : textByTheme;
@@ -51,7 +49,7 @@ const Button: React.FC<PropsType> = ({
         color: textColor,
       },
     };
-  }, [variant, color, currentTheme, colors]);
+  }, [variant, color, isLight, colors]);
 
   return (
     <TouchableOpacity

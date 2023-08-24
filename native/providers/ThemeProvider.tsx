@@ -10,9 +10,11 @@ type ThemeStateType = {
   currentTheme: ThemeType;
 };
 
-type ContextType = ThemeStateType & {
+type ContextType = Omit<ThemeStateType, "currentTheme"> & {
   setPreference: (preference: PreferenceType) => void;
   colors: ColorsType;
+  isLight: boolean;
+  isDark: boolean;
 };
 
 export const ThemeContext = createContext<ContextType>({} as ContextType);
@@ -26,7 +28,6 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   });
 
   useEffect(() => {
-    console.log(Appearance.getColorScheme());
     if (theme.preference !== "system") return;
 
     const listener = Appearance.addChangeListener((event) => {
@@ -54,7 +55,9 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <ThemeContext.Provider
       value={{
-        ...theme,
+        preference: theme.preference,
+        isDark: theme.currentTheme === "dark",
+        isLight: theme.currentTheme === "light",
         colors: theme.currentTheme === "light" ? COLORS : DARK_COLORS,
         setPreference,
       }}

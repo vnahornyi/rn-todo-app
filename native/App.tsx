@@ -66,7 +66,7 @@ const App: React.FC = () => {
 };
 
 const Navigator: React.FC = () => {
-  const { currentTheme } = useTheme();
+  const { isLight } = useTheme();
   const { prepareTodos } = useTodos();
 
   useEffect(() => {
@@ -77,11 +77,9 @@ const Navigator: React.FC = () => {
     <SafeAreaProvider>
       <StatusBar
         animated
-        barStyle={currentTheme === "light" ? "dark-content" : "light-content"}
+        barStyle={isLight ? "dark-content" : "light-content"}
       />
-      <NavigationContainer
-        theme={currentTheme === "light" ? lightTheme : darkTheme}
-      >
+      <NavigationContainer theme={isLight ? lightTheme : darkTheme}>
         <Stack.Navigator
           initialRouteName="FirstOnboarding"
           screenOptions={{
@@ -119,7 +117,7 @@ const Navigator: React.FC = () => {
 };
 
 const TabsNavigator: React.FC = () => {
-  const { currentTheme, colors } = useTheme();
+  const { isDark, colors } = useTheme();
   const styles = useStyles();
   const { i18n } = useLocale();
 
@@ -127,10 +125,8 @@ const TabsNavigator: React.FC = () => {
     <Tabs.Navigator
       initialRouteName="TodosScreen"
       screenOptions={{
-        tabBarActiveTintColor:
-          currentTheme === "dark" ? colors.white : colors.black,
-        tabBarInactiveTintColor:
-          currentTheme === "dark" ? colors.white : colors.black,
+        tabBarActiveTintColor: isDark ? colors.white : colors.black,
+        tabBarInactiveTintColor: isDark ? colors.white : colors.black,
         tabBarStyle: styles.bottomHeader,
       }}
     >
