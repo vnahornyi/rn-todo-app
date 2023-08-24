@@ -33,7 +33,7 @@ const Chip: React.FC<ChipPropsType> = ({ name, Icon, color, iconColor }) => {
         width={moderatePixel(15)}
         height={moderatePixel(15)}
       />
-      <Text style={TYPOGRAPHY.span}>{name}</Text>
+      <Text style={styles.name}>{name}</Text>
     </View>
   );
 };
@@ -48,5 +48,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: pixelSizeHorizontal(5),
+  },
+  name: {
+    ...TYPOGRAPHY.span,
+    color: COLORS.white,
   },
 });

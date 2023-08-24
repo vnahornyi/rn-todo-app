@@ -6,6 +6,7 @@ import Button from "./Button";
 import useBoolean from "../../shared/hooks/useBoolean";
 import PLATFORM from "../constants/platform";
 import useLocale from "../../shared/hooks/useLocale";
+import useTheme from "../hooks/useTheme";
 
 type DatePickerPropsType = {
   value: Date;
@@ -20,6 +21,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
   minimumDate,
   maximumDate,
 }) => {
+  const { currentTheme } = useTheme();
   const { currentLocale } = useLocale();
   const [isShow, setShow] = useBoolean();
 
@@ -37,7 +39,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
     <View>
       <Button
         variant="outline"
-        color="secondary"
+        color="primary"
         title={format(value, "yyyy-MM-dd")}
         onPress={setShow.toggle}
       />
@@ -47,7 +49,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
           locale={currentLocale}
           display={PLATFORM.isIOS ? "inline" : "calendar"}
           value={value}
-          themeVariant="dark"
+          themeVariant={currentTheme}
           onChange={handleSelect}
           minimumDate={minimumDate}
           maximumDate={maximumDate}

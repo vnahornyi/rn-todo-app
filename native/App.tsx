@@ -1,14 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StatusBar, StyleSheet } from "react-native";
+import { StatusBar } from "react-native";
 import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import SplashScreen from "react-native-splash-screen";
 
+import useTheme from "./hooks/useTheme";
 import useTodos from "../shared/hooks/useTodos";
 import { heightPixel, widthPixel } from "./utils/normalize";
-import theme from "./constants/theme";
+import { darkTheme, lightTheme } from "./constants/theme";
 import COLORS from "./constants/colors";
 import PLATFORM from "./constants/platform";
 import { TodoType } from "../shared/types/todos";
@@ -35,6 +36,8 @@ import DocumentIcon from "./assets/images/icons/document.svg";
 import DocumentSolidIcon from "./assets/images/icons/document-solid.svg";
 import { t } from "@lingui/macro";
 import useLocale from "../shared/hooks/useLocale";
+import ThemeProvider from "./providers/ThemeProvider";
+import createStyles from "./utils/createStyles";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -56,12 +59,15 @@ const Tabs = createBottomTabNavigator<RootScreensType>();
 const App: React.FC = () => {
   return (
     <RootProvider>
-      <Navigator />
+      <ThemeProvider>
+        <Navigator />
+      </ThemeProvider>
     </RootProvider>
   );
 };
 
 const Navigator: React.FC = () => {
+  const { currentTheme } = useTheme();
   const { prepareTodos } = useTodos();
 
   useEffect(() => {
@@ -70,8 +76,13 @@ const Navigator: React.FC = () => {
 
   return (
     <SafeAreaProvider>
-      <StatusBar animated barStyle="light-content" />
-      <NavigationContainer theme={theme}>
+      <StatusBar
+        animated
+        barStyle={currentTheme === "light" ? "dark-content" : "light-content"}
+      />
+      <NavigationContainer
+        theme={currentTheme === "light" ? lightTheme : darkTheme}
+      >
         <Stack.Navigator
           initialRouteName="FirstOnboarding"
           screenOptions={{
@@ -109,14 +120,18 @@ const Navigator: React.FC = () => {
 };
 
 const TabsNavigator: React.FC = () => {
+  const { currentTheme } = useTheme();
+  const styles = useStyles();
   const { i18n } = useLocale();
 
   return (
     <Tabs.Navigator
       initialRouteName="TodosScreen"
       screenOptions={{
-        tabBarActiveTintColor: COLORS.white,
-        tabBarInactiveTintColor: COLORS.white,
+        tabBarActiveTintColor:
+          currentTheme === "dark" ? COLORS.white : COLORS.black,
+        tabBarInactiveTintColor:
+          currentTheme === "dark" ? COLORS.white : COLORS.black,
         tabBarStyle: styles.bottomHeader,
       }}
     >
@@ -131,7 +146,7 @@ const TabsNavigator: React.FC = () => {
 
             return (
               <Icon
-                color={COLORS.white}
+                style={styles.icon}
                 width={widthPixel(24)}
                 height={heightPixel(24)}
               />
@@ -148,7 +163,7 @@ const TabsNavigator: React.FC = () => {
           tabBarIcon: () => {
             return (
               <PetsIcon
-                color={COLORS.white}
+                style={styles.icon}
                 width={widthPixel(24)}
                 height={heightPixel(24)}
               />
@@ -176,7 +191,7 @@ const TabsNavigator: React.FC = () => {
               <Icon
                 width={widthPixel(28)}
                 height={heightPixel(28)}
-                color={COLORS.white}
+                style={styles.icon}
               />
             );
           },
@@ -195,7 +210,7 @@ const TabsNavigator: React.FC = () => {
               <Icon
                 width={widthPixel(28)}
                 height={heightPixel(28)}
-                color={COLORS.white}
+                style={styles.icon}
               />
             );
           },
@@ -205,10 +220,13 @@ const TabsNavigator: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   bottomHeader: {
-    backgroundColor: COLORS.cardBackground,
+    backgroundColor: colors.cardBackground,
   },
-});
+  icon: {
+    color: colors.text,
+  },
+}));
 
 export default App;

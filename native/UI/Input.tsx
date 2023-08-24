@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
+import createStyles from "../utils/createStyles";
 
 type PropsType = React.ComponentProps<typeof TextInput> & {
   label: string;
@@ -12,6 +13,7 @@ type PropsType = React.ComponentProps<typeof TextInput> & {
 };
 
 const Input: React.FC<PropsType> = ({ label, error, ...inputProps }) => {
+  const styles = useStyles();
   const animation = useRef(
     new Animated.Value(inputProps.value ? 1 : 0)
   ).current;
@@ -89,11 +91,12 @@ const Input: React.FC<PropsType> = ({ label, error, ...inputProps }) => {
 
 export default Input;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   label: {
     position: "absolute",
     left: pixelSizeHorizontal(12),
     ...TYPOGRAPHY.bigBody,
+    color: colors.text,
   },
   input: {
     borderWidth: 1,
@@ -102,6 +105,7 @@ const styles = StyleSheet.create({
     paddingVertical: pixelSizeVertical(16),
     paddingHorizontal: pixelSizeHorizontal(16),
     ...TYPOGRAPHY.bigBody,
+    color: colors.text,
   },
   error: {
     ...TYPOGRAPHY.span,
@@ -109,4 +113,4 @@ const styles = StyleSheet.create({
     top: pixelSizeVertical(65),
     color: COLORS.error,
   },
-});
+}));

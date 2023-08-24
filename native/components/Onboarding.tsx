@@ -1,4 +1,4 @@
-import { StyleSheet, View, SafeAreaView, Text } from "react-native";
+import { View, SafeAreaView, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useCallback } from "react";
@@ -16,6 +16,7 @@ import {
 
 import Button from "../UI/Button";
 import Stepper from "../UI/Stepper";
+import createStyles from "../utils/createStyles";
 
 type PropsType = {
   Image: React.FC<SvgProps>;
@@ -47,6 +48,7 @@ const Onboarding: React.FC<PropsType> = ({
   title,
   description,
 }) => {
+  const styles = useStyles();
   const { i18n } = useLocale();
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
 
@@ -73,9 +75,7 @@ const Onboarding: React.FC<PropsType> = ({
         <View style={styles.bottomPart}>
           <Stepper step={step} />
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.description}>
-            {description}
-          </Text>
+          <Text style={styles.description}>{description}</Text>
         </View>
         <View style={styles.bottomTabs}>
           {navigation.canGoBack() && (
@@ -97,7 +97,7 @@ const Onboarding: React.FC<PropsType> = ({
 
 export default Onboarding;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     flexGrow: 1,
     alignItems: "center",
@@ -134,13 +134,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: pixelSizeVertical(50),
     marginBottom: pixelSizeVertical(42),
+    color: colors.text,
   },
   description: {
     ...TYPOGRAPHY.body,
     textAlign: "center",
+    color: colors.text,
   },
   image: {
     width: "100%",
     height: "auto",
   },
-});
+}));

@@ -14,6 +14,7 @@ import CheckBox from "../UI/CheckBox";
 import Chip from "../UI/Chip";
 import { t } from "@lingui/macro";
 import useLocale from "../../shared/hooks/useLocale";
+import createStyles from "../utils/createStyles";
 
 type TodoCardPropsType = TodoType & {
   setCompleted: React.ComponentProps<typeof CheckBox>["onChange"];
@@ -30,6 +31,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
   title,
   id,
 }) => {
+  const styles = useStyles();
   const { i18n } = useLocale();
   const navigation = useNavigation<TodosScreenNavigationProp>();
 
@@ -45,7 +47,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
     >
       <CheckBox value={isCompleted} onChange={setCompleted} />
       <View style={styles.content}>
-        <Text style={TYPOGRAPHY.body}>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
         <View style={styles.bottomPart}>
           <Text style={styles.when}>{t(i18n)`Today At`} 16:45</Text>
           <Chip
@@ -62,21 +64,21 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
 
 export default TodoCard;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   card: {
-    backgroundColor: COLORS.cardBackground,
+    backgroundColor: colors.cardBackground,
     borderRadius: 4,
     flexDirection: "row",
     paddingVertical: pixelSizeVertical(12),
     paddingHorizontal: pixelSizeHorizontal(10),
     alignItems: "center",
     gap: pixelSizeHorizontal(12),
-    shadowColor: COLORS.cardBackground,
+    shadowColor: colors.black,
     shadowOffset: {
-      width: 2,
-      height: 2,
+      width: 1,
+      height: 1,
     },
-    shadowOpacity: 0.4,
+    shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 4,
   },
@@ -91,6 +93,10 @@ const styles = StyleSheet.create({
   },
   when: {
     ...TYPOGRAPHY.smallBody,
-    color: COLORS.gray,
+    color: colors.secondary,
   },
-});
+  title: {
+    ...TYPOGRAPHY.body,
+    color: colors.text,
+  },
+}));

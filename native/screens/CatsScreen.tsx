@@ -18,8 +18,10 @@ import calculateCatCardHeight from "../utils/calculateCatCardHeight";
 
 import CatCard from "../components/CatCard";
 import Button from "../UI/Button";
+import createStyles from "../utils/createStyles";
 
 const CatsScreen: React.FC = () => {
+  const styles = useStyles();
   const [columns, setColumns] = useState<1 | 2 | 3>(1);
   const { loading, loadCats, cats } = useAppState();
 
@@ -117,7 +119,7 @@ const CatsScreen: React.FC = () => {
 
 export default CatsScreen;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     flex: 1,
     justifyContent: "center",
@@ -136,9 +138,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   text: {
-    color: "#ffffff",
+    color: colors.text,
   },
-});
+}));

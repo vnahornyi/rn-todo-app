@@ -25,11 +25,13 @@ import TrashIcon from "../assets/images/icons/trash.svg";
 import CheckBox from "../UI/CheckBox";
 import Button from "../UI/Button";
 import BackButton from "../components/BackButton";
+import createStyles from "../utils/createStyles";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
 const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   const { todoId } = route.params;
+  const styles = useStyles();
   const { i18n } = useLocale();
   const { completeTodo, todos, deleteTodo } = useTodos();
   const todo = todos.find((todo) => todoId === todo.id);
@@ -61,7 +63,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
         <View style={styles.head}>
           <CheckBox value={todo.isCompleted} onChange={handleComplete} />
           <View style={styles.content}>
-            <Text style={TYPOGRAPHY.bigBody}>{todo.title}</Text>
+            <Text style={styles.title}>{todo.title}</Text>
             <Text style={styles.description}>{todo.description}</Text>
           </View>
         </View>
@@ -87,7 +89,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     flex: 1,
     paddingVertical: pixelSizeVertical(12),
@@ -110,9 +112,13 @@ const styles = StyleSheet.create({
   content: {
     gap: pixelSizeVertical(15),
   },
+  title: {
+    ...TYPOGRAPHY.bigBody,
+    color: colors.text,
+  },
   description: {
     ...TYPOGRAPHY.body,
-    color: COLORS.gray,
+    color: colors.secondary,
   },
   deleteBtn: {
     flexDirection: "row",
@@ -121,8 +127,8 @@ const styles = StyleSheet.create({
   },
   deleteText: {
     ...TYPOGRAPHY.body,
-    color: COLORS.error,
+    color: colors.error,
   },
-});
+}));
 
 export default TodoScreen;

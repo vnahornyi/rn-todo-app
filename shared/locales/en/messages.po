@@ -13,9 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: native/screens/CatsScreen.tsx:81
-#: native/screens/CatsScreen.tsx:84
-#: native/screens/CatsScreen.tsx:87
+#: native/screens/CatsScreen.tsx:83
+#: native/screens/CatsScreen.tsx:86
+#: native/screens/CatsScreen.tsx:89
 #: web/src/components/Header.tsx:9
 #: web/src/components/Header.tsx:12
 #: web/src/components/Header.tsx:15
@@ -34,10 +34,14 @@ msgstr "BACK"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: native/App.tsx:146
-#: native/App.tsx:147
+#: native/App.tsx:161
+#: native/App.tsx:162
 msgid "Cats"
 msgstr "Cats"
+
+#: native/screens/Settings.tsx:27
+msgid "Choose theme"
+msgstr "Choose theme"
 
 #: native/screens/intro/SecondOnboardingScreen.tsx:14
 msgid "Create daily routine"
@@ -47,7 +51,11 @@ msgstr "Create daily routine"
 msgid "Create Todo"
 msgstr "Create Todo"
 
-#: native/screens/TodoScreen.tsx:79
+#: native/screens/Settings.tsx:36
+msgid "Dark"
+msgstr "Dark"
+
+#: native/screens/TodoScreen.tsx:81
 msgid "Delete Task"
 msgstr "Delete Task"
 
@@ -55,7 +63,7 @@ msgstr "Delete Task"
 msgid "Description:"
 msgstr "Description:"
 
-#: native/screens/TodoScreen.tsx:84
+#: native/screens/TodoScreen.tsx:86
 msgid "Edit Task"
 msgstr "Edit Task"
 
@@ -63,14 +71,18 @@ msgstr "Edit Task"
 msgid "Edit Todo"
 msgstr "Edit Todo"
 
-#: native/App.tsx:170
-#: native/App.tsx:171
+#: native/App.tsx:185
+#: native/App.tsx:186
 msgid "Form"
 msgstr "Form"
 
 #: native/screens/intro/SecondOnboardingScreen.tsx:15
 msgid "In Uptodo you can create your personalized routine to stay productive"
 msgstr "In Uptodo you can create your personalized routine to stay productive"
+
+#: native/screens/Settings.tsx:31
+msgid "Light"
+msgstr "Light"
 
 #: native/screens/intro/FirstOnboardingScreen.tsx:14
 msgid "Manage your tasks"
@@ -92,8 +104,8 @@ msgstr "Password"
 msgid "Send"
 msgstr "Send"
 
-#: native/App.tsx:189
-#: native/App.tsx:190
+#: native/App.tsx:204
+#: native/App.tsx:205
 msgid "Settings"
 msgstr "Settings"
 
@@ -109,13 +121,17 @@ msgstr "Should be more than 2"
 msgid "Should be not more than 50"
 msgstr "Should be not more than 50"
 
-#: native/components/Onboarding.tsx:68
+#: native/components/Onboarding.tsx:70
 msgid "SKIP"
 msgstr "SKIP"
 
-#: native/screens/CatsScreen.tsx:92
+#: native/screens/CatsScreen.tsx:94
 msgid "Something wrong... Try reload app"
 msgstr "Something wrong... Try reload app"
+
+#: native/screens/Settings.tsx:41
+msgid "System"
+msgstr "System"
 
 #: native/components/Empty.tsx:27
 msgid "Tap + to add your tasks"
@@ -130,7 +146,7 @@ msgstr "Task's name"
 msgid "This field is required"
 msgstr "This field is required"
 
-#: native/components/TodoCard.tsx:50
+#: native/components/TodoCard.tsx:52
 msgid "Today At"
 msgstr "Today At"
 
@@ -138,12 +154,12 @@ msgstr "Today At"
 msgid "Todo:"
 msgstr "Todo:"
 
-#: native/App.tsx:127
-#: native/App.tsx:128
+#: native/App.tsx:142
+#: native/App.tsx:143
 msgid "Todos"
 msgstr "Todos"
 
-#: native/components/TodoCard.tsx:55
+#: native/components/TodoCard.tsx:57
 msgid "University"
 msgstr "University"
 
