@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-08-15 15:49+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: uk\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: native/screens/CatsScreen.tsx:81
+#: native/screens/CatsScreen.tsx:84
+#: native/screens/CatsScreen.tsx:87
+#: web/src/components/Header.tsx:9
+#: web/src/components/Header.tsx:12
+#: web/src/components/Header.tsx:15
+msgid "{0, plural, one {# cat} few {# cats} other {# cats}}"
+msgstr "{0, plural, one {# кіт} few {# коти} other {# котів}}"
+
+#: native/screens/CreateEditTodo.tsx:79
+msgid "Add Task"
+msgstr "Додати задачу"
+
+#: native/components/Onboarding.tsx:83
+msgid "BACK"
+msgstr "Назад"
+
+#: native/screens/CreateEditTodo.tsx:107
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: native/App.tsx:146
+#: native/App.tsx:147
+msgid "Cats"
+msgstr "Коти"
+
+#: native/screens/intro/SecondOnboardingScreen.tsx:14
+msgid "Create daily routine"
+msgstr "Створити денну рутину"
+
+#: native/screens/CreateEditTodo.tsx:43
+msgid "Create Todo"
+msgstr "Створити"
+
+#: native/screens/TodoScreen.tsx:79
+msgid "Delete Task"
+msgstr "Видалити завдання"
+
+#: native/screens/CreateEditTodo.tsx:93
+msgid "Description:"
+msgstr "Опис:"
+
+#: native/screens/TodoScreen.tsx:84
+msgid "Edit Task"
+msgstr "Змінити завдання"
+
+#: native/screens/CreateEditTodo.tsx:42
+msgid "Edit Todo"
+msgstr "Відредагувати"
+
+#: native/App.tsx:170
+#: native/App.tsx:171
+msgid "Form"
+msgstr "Форма"
+
+#: native/screens/intro/SecondOnboardingScreen.tsx:15
+msgid "In Uptodo you can create your personalized routine to stay productive"
+msgstr "В Uptodo Ви можете створити власний персанолізований графік для підтримки продуктивності"
+
+#: native/screens/intro/FirstOnboardingScreen.tsx:14
+msgid "Manage your tasks"
+msgstr "Керуй своїми завданнями"
+
+#: native/components/Onboarding.tsx:90
+msgid "NEXT"
+msgstr "Далі"
+
+#: native/screens/intro/ThirdOnboardingScreen.tsx:14
+msgid "Orgonaize your tasks"
+msgstr "Організуй свої завдання"
+
+#: native/screens/FormScreen.tsx:104
+msgid "Password"
+msgstr "Пароль"
+
+#: native/screens/FormScreen.tsx:129
+msgid "Send"
+msgstr "Створити"
+
+#: native/App.tsx:189
+#: native/App.tsx:190
+msgid "Settings"
+msgstr "Налаштування"
+
+#: native/screens/FormScreen.tsx:99
+msgid "Should be less than 10"
+msgstr "Повинно бути менше 10"
+
+#: native/screens/FormScreen.tsx:95
+msgid "Should be more than 2"
+msgstr "Повинно бути більше 2"
+
+#: native/screens/FormScreen.tsx:72
+msgid "Should be not more than 50"
+msgstr "Повинно бути не більше ніж 50"
+
+#: native/components/Onboarding.tsx:68
+msgid "SKIP"
+msgstr "Пропустити"
+
+#: native/screens/CatsScreen.tsx:92
+msgid "Something wrong... Try reload app"
+msgstr "Ой, халепа... Спробуйте ще раз"
+
+#: native/components/Empty.tsx:27
+msgid "Tap + to add your tasks"
+msgstr "Натисніть + щоб додати завдання"
+
+#: native/screens/CreateEditTodo.tsx:88
+msgid "Task's name"
+msgstr "Імʼя задачі"
+
+#: native/screens/FormScreen.tsx:68
+#: native/screens/FormScreen.tsx:91
+msgid "This field is required"
+msgstr "Це поле є обовʼязковим"
+
+#: native/components/TodoCard.tsx:50
+msgid "Today At"
+msgstr "Сьогодні в"
+
+#: native/screens/CreateEditTodo.tsx:82
+msgid "Todo:"
+msgstr "Задача:"
+
+#: native/App.tsx:127
+#: native/App.tsx:128
+msgid "Todos"
+msgstr "Завдання"
+
+#: native/components/TodoCard.tsx:55
+msgid "University"
+msgstr "Університет"
+
+#: native/screens/FormScreen.tsx:77
+msgid "User Name"
+msgstr "Імʼя користувача"
+
+#: native/components/Empty.tsx:24
+msgid "What do you want to do today?"
+msgstr "Що ви плануєте сьогодні зробити?"
+
+#: native/screens/CreateEditTodo.tsx:100
+msgid "What do you want to do?"
+msgstr "Що ви хочете зробити?"
+
+#: native/screens/intro/FirstOnboardingScreen.tsx:15
+msgid "You can easily manage all of your daily tasks in DoMe for free"
+msgstr "Ви можете легко керувати всіма власними денними завданнями в DoMe безкоштовно"
+
+#: native/screens/intro/ThirdOnboardingScreen.tsx:15
+msgid "You can organize your daily tasks by adding your tasks into separate categories"
+msgstr "Ви можете організувати власні денні завдання розділяючи по категоріям"

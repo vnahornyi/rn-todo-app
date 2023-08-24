@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-08-15 15:49+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: native/screens/CatsScreen.tsx:81
+#: native/screens/CatsScreen.tsx:84
+#: native/screens/CatsScreen.tsx:87
+#: web/src/components/Header.tsx:9
+#: web/src/components/Header.tsx:12
+#: web/src/components/Header.tsx:15
+msgid "{0, plural, one {# cat} few {# cats} other {# cats}}"
+msgstr "{0, plural, one {# cat} few {# cats} other {# cats}}"
+
+#: native/screens/CreateEditTodo.tsx:79
+msgid "Add Task"
+msgstr "Add Task"
+
+#: native/components/Onboarding.tsx:83
+msgid "BACK"
+msgstr "BACK"
+
+#: native/screens/CreateEditTodo.tsx:107
+msgid "Cancel"
+msgstr "Cancel"
+
+#: native/App.tsx:146
+#: native/App.tsx:147
+msgid "Cats"
+msgstr "Cats"
+
+#: native/screens/intro/SecondOnboardingScreen.tsx:14
+msgid "Create daily routine"
+msgstr "Create daily routine"
+
+#: native/screens/CreateEditTodo.tsx:43
+msgid "Create Todo"
+msgstr "Create Todo"
+
+#: native/screens/TodoScreen.tsx:79
+msgid "Delete Task"
+msgstr "Delete Task"
+
+#: native/screens/CreateEditTodo.tsx:93
+msgid "Description:"
+msgstr "Description:"
+
+#: native/screens/TodoScreen.tsx:84
+msgid "Edit Task"
+msgstr "Edit Task"
+
+#: native/screens/CreateEditTodo.tsx:42
+msgid "Edit Todo"
+msgstr "Edit Todo"
+
+#: native/App.tsx:170
+#: native/App.tsx:171
+msgid "Form"
+msgstr "Form"
+
+#: native/screens/intro/SecondOnboardingScreen.tsx:15
+msgid "In Uptodo you can create your personalized routine to stay productive"
+msgstr "In Uptodo you can create your personalized routine to stay productive"
+
+#: native/screens/intro/FirstOnboardingScreen.tsx:14
+msgid "Manage your tasks"
+msgstr "Manage your tasks"
+
+#: native/components/Onboarding.tsx:90
+msgid "NEXT"
+msgstr "NEXT"
+
+#: native/screens/intro/ThirdOnboardingScreen.tsx:14
+msgid "Orgonaize your tasks"
+msgstr "Orgonaize your tasks"
+
+#: native/screens/FormScreen.tsx:104
+msgid "Password"
+msgstr "Password"
+
+#: native/screens/FormScreen.tsx:129
+msgid "Send"
+msgstr "Send"
+
+#: native/App.tsx:189
+#: native/App.tsx:190
+msgid "Settings"
+msgstr "Settings"
+
+#: native/screens/FormScreen.tsx:99
+msgid "Should be less than 10"
+msgstr "Should be less than 10"
+
+#: native/screens/FormScreen.tsx:95
+msgid "Should be more than 2"
+msgstr "Should be more than 2"
+
+#: native/screens/FormScreen.tsx:72
+msgid "Should be not more than 50"
+msgstr "Should be not more than 50"
+
+#: native/components/Onboarding.tsx:68
+msgid "SKIP"
+msgstr "SKIP"
+
+#: native/screens/CatsScreen.tsx:92
+msgid "Something wrong... Try reload app"
+msgstr "Something wrong... Try reload app"
+
+#: native/components/Empty.tsx:27
+msgid "Tap + to add your tasks"
+msgstr "Tap + to add your tasks"
+
+#: native/screens/CreateEditTodo.tsx:88
+msgid "Task's name"
+msgstr "Task's name"
+
+#: native/screens/FormScreen.tsx:68
+#: native/screens/FormScreen.tsx:91
+msgid "This field is required"
+msgstr "This field is required"
+
+#: native/components/TodoCard.tsx:50
+msgid "Today At"
+msgstr "Today At"
+
+#: native/screens/CreateEditTodo.tsx:82
+msgid "Todo:"
+msgstr "Todo:"
+
+#: native/App.tsx:127
+#: native/App.tsx:128
+msgid "Todos"
+msgstr "Todos"
+
+#: native/components/TodoCard.tsx:55
+msgid "University"
+msgstr "University"
+
+#: native/screens/FormScreen.tsx:77
+msgid "User Name"
+msgstr "User Name"
+
+#: native/components/Empty.tsx:24
+msgid "What do you want to do today?"
+msgstr "What do you want to do today?"
+
+#: native/screens/CreateEditTodo.tsx:100
+msgid "What do you want to do?"
+msgstr "What do you want to do?"
+
+#: native/screens/intro/FirstOnboardingScreen.tsx:15
+msgid "You can easily manage all of your daily tasks in DoMe for free"
+msgstr "You can easily manage all of your daily tasks in DoMe for free"
+
+#: native/screens/intro/ThirdOnboardingScreen.tsx:15
+msgid "You can organize your daily tasks by adding your tasks into separate categories"
+msgstr "You can organize your daily tasks by adding your tasks into separate categories"
