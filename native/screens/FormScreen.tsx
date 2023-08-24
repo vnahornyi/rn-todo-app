@@ -4,16 +4,13 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   ScrollView,
-  StyleSheet,
-  Text,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { Trans, t } from "@lingui/macro";
+import { t } from "@lingui/macro";
 
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import PLATFORM from "../constants/platform";
-import COLORS from "../constants/colors";
 import useLocale from "../../shared/hooks/useLocale";
 
 import Button from "../UI/Button";

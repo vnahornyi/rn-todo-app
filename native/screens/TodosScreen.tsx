@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import {
-  StyleSheet,
   FlatList,
   ListRenderItemInfo,
   Platform,
@@ -14,9 +13,10 @@ import useTodos from "../../shared/hooks/useTodos";
 
 import Empty from "../components/Empty";
 import TodoCard from "../components/TodoCard";
-import COLORS from "../constants/colors";
+import createStyles from "../utils/createStyles";
 
 const TodosScreen: React.FC = () => {
+  const styles = useStyles();
   const { todos, completeTodo } = useTodos();
 
   const renderItem = useCallback(
@@ -47,12 +47,12 @@ const TodosScreen: React.FC = () => {
 
 export default TodosScreen;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     flexGrow: 1,
     backgroundColor:
       DeviceInfo.hasNotch() && Platform.Version < "16"
-        ? COLORS.blue
+        ? colors.blue
         : undefined,
   },
   listContainer: {
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: pixelSizeHorizontal(24),
     gap: pixelSizeVertical(16),
   },
-});
+}));

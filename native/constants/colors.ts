@@ -18,7 +18,7 @@ const darkCardBackground = "#363636";
 const borderColor = "#979797";
 const error = "#FF4949";
 
-const COLORS = {
+export const COLORS = {
   blue,
   red,
   yellow,
@@ -45,4 +45,4 @@ export const DARK_COLORS = {
   text: white,
 };
 
-export default COLORS;
+export type ColorsType = typeof COLORS & typeof DARK_COLORS;

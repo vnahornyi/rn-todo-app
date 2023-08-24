@@ -10,7 +10,6 @@ import useTheme from "./hooks/useTheme";
 import useTodos from "../shared/hooks/useTodos";
 import { heightPixel, widthPixel } from "./utils/normalize";
 import { darkTheme, lightTheme } from "./constants/theme";
-import COLORS from "./constants/colors";
 import PLATFORM from "./constants/platform";
 import { TodoType } from "../shared/types/todos";
 import RootProvider from "../shared/providers";
@@ -120,7 +119,7 @@ const Navigator: React.FC = () => {
 };
 
 const TabsNavigator: React.FC = () => {
-  const { currentTheme } = useTheme();
+  const { currentTheme, colors } = useTheme();
   const styles = useStyles();
   const { i18n } = useLocale();
 
@@ -129,9 +128,9 @@ const TabsNavigator: React.FC = () => {
       initialRouteName="TodosScreen"
       screenOptions={{
         tabBarActiveTintColor:
-          currentTheme === "dark" ? COLORS.white : COLORS.black,
+          currentTheme === "dark" ? colors.white : colors.black,
         tabBarInactiveTintColor:
-          currentTheme === "dark" ? COLORS.white : COLORS.black,
+          currentTheme === "dark" ? colors.white : colors.black,
         tabBarStyle: styles.bottomHeader,
       }}
     >
@@ -146,7 +145,7 @@ const TabsNavigator: React.FC = () => {
 
             return (
               <Icon
-                style={styles.icon}
+                color={colors.text}
                 width={widthPixel(24)}
                 height={heightPixel(24)}
               />
@@ -163,7 +162,7 @@ const TabsNavigator: React.FC = () => {
           tabBarIcon: () => {
             return (
               <PetsIcon
-                style={styles.icon}
+                color={colors.text}
                 width={widthPixel(24)}
                 height={heightPixel(24)}
               />
@@ -191,7 +190,7 @@ const TabsNavigator: React.FC = () => {
               <Icon
                 width={widthPixel(28)}
                 height={heightPixel(28)}
-                style={styles.icon}
+                color={colors.text}
               />
             );
           },
@@ -210,7 +209,7 @@ const TabsNavigator: React.FC = () => {
               <Icon
                 width={widthPixel(28)}
                 height={heightPixel(28)}
-                style={styles.icon}
+                color={colors.text}
               />
             );
           },
@@ -223,9 +222,6 @@ const TabsNavigator: React.FC = () => {
 const useStyles = createStyles((colors) => ({
   bottomHeader: {
     backgroundColor: colors.cardBackground,
-  },
-  icon: {
-    color: colors.text,
   },
 }));
 

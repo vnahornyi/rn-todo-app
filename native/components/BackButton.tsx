@@ -5,9 +5,11 @@ import { moderatePixel } from "../utils/normalize";
 
 import CloseIcon from "../assets/images/icons/close.svg";
 import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 const BackButton: React.FC = () => {
   const styles = useStyles();
+  const { colors } = useTheme();
   const navigation = useNavigation();
 
   if (!navigation.canGoBack()) {
@@ -20,7 +22,7 @@ const BackButton: React.FC = () => {
       style={styles.backButton}
       activeOpacity={0.8}
     >
-      <CloseIcon style={styles.icon} />
+      <CloseIcon color={colors.text} />
     </TouchableOpacity>
   );
 };
@@ -38,8 +40,5 @@ const useStyles = createStyles((colors) => ({
     shadowColor: colors.black,
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.1,
-  },
-  icon: {
-    color: colors.text,
   },
 }));

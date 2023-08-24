@@ -1,5 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { Appearance } from "react-native";
+import { COLORS, ColorsType, DARK_COLORS } from "../constants/colors";
 
 type ThemeType = "light" | "dark";
 export type PreferenceType = ThemeType | "system";
@@ -11,6 +12,7 @@ type ThemeStateType = {
 
 type ContextType = ThemeStateType & {
   setPreference: (preference: PreferenceType) => void;
+  colors: ColorsType;
 };
 
 export const ThemeContext = createContext<ContextType>({} as ContextType);
@@ -24,6 +26,7 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   });
 
   useEffect(() => {
+    console.log(Appearance.getColorScheme());
     if (theme.preference !== "system") return;
 
     const listener = Appearance.addChangeListener((event) => {
@@ -37,11 +40,13 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [theme.preference]);
 
   const setPreference = useCallback((preference: PreferenceType) => {
+    const currentTheme =
+      preference === "system"
+        ? Appearance.getColorScheme() ?? "light"
+        : preference;
+
     setTheme({
-      currentTheme:
-        preference === "system"
-          ? Appearance.getColorScheme() ?? "light"
-          : preference,
+      currentTheme,
       preference,
     });
   }, []);
@@ -50,6 +55,7 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     <ThemeContext.Provider
       value={{
         ...theme,
+        colors: theme.currentTheme === "light" ? COLORS : DARK_COLORS,
         setPreference,
       }}
     >

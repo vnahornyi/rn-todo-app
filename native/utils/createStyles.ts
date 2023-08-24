@@ -1,15 +1,23 @@
-import { StyleSheet, StyleProp } from "react-native";
+import {
+  ImageStyle,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 
-import COLORS, { DARK_COLORS } from "../constants/colors";
 import useTheme from "../hooks/useTheme";
+import { ColorsType } from "../constants/colors";
 
-const createStyles = (callback: (colors: typeof COLORS) => StyleProp<any>) => {
+const createStyles = <
+  T extends StyleSheet.NamedStyles<T> | StyleSheet.NamedStyles<any>
+>(
+  callback: (colors: ColorsType) => T | StyleSheet.NamedStyles<T>
+) => {
   return () => {
-    const { currentTheme } = useTheme();
+    const { colors } = useTheme();
 
-    const styles = StyleSheet.create(
-      callback(currentTheme === "light" ? COLORS : DARK_COLORS)
-    );
+    const styles = StyleSheet.create(callback(colors));
 
     return styles;
   };

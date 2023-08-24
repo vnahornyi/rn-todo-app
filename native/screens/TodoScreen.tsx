@@ -2,16 +2,9 @@ import { Trans, t } from "@lingui/macro";
 import { useCallback } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { RootScreensType } from "../App";
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import useTodos from "../../shared/hooks/useTodos";
 import {
@@ -26,11 +19,13 @@ import CheckBox from "../UI/CheckBox";
 import Button from "../UI/Button";
 import BackButton from "../components/BackButton";
 import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 type PropsType = NativeStackScreenProps<RootScreensType, "TodoScreen">;
 
 const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
   const { todoId } = route.params;
+  const { colors } = useTheme();
   const styles = useStyles();
   const { i18n } = useLocale();
   const { completeTodo, todos, deleteTodo } = useTodos();
@@ -75,7 +70,7 @@ const TodoScreen: React.FC<PropsType> = ({ navigation, route }) => {
           <TrashIcon
             width={moderatePixel(24)}
             height={moderatePixel(24)}
-            color={COLORS.error}
+            color={colors.error}
           />
           <Text style={styles.deleteText}>
             <Trans>Delete Task</Trans>

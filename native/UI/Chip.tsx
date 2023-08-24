@@ -1,14 +1,15 @@
 import { useMemo } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SvgProps } from "react-native-svg";
 
-import COLORS from "../constants/colors";
 import {
   moderatePixel,
   pixelSizeHorizontal,
   pixelSizeVertical,
 } from "../utils/normalize";
 import TYPOGRAPHY from "../constants/typography";
+import useTheme from "../hooks/useTheme";
+import createStyles from "../utils/createStyles";
 
 type ChipPropsType = {
   color: "blue" | "red" | "yellow";
@@ -18,10 +19,12 @@ type ChipPropsType = {
 };
 
 const Chip: React.FC<ChipPropsType> = ({ name, Icon, color, iconColor }) => {
+  const styles = useStyles();
+  const { colors } = useTheme();
   const chipStyles = useMemo(
     () => ({
       ...styles.chip,
-      backgroundColor: COLORS[color],
+      backgroundColor: colors[color],
     }),
     [color]
   );
@@ -40,7 +43,7 @@ const Chip: React.FC<ChipPropsType> = ({ name, Icon, color, iconColor }) => {
 
 export default Chip;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   chip: {
     paddingVertical: pixelSizeVertical(8),
     paddingHorizontal: pixelSizeHorizontal(8),
@@ -51,6 +54,6 @@ const styles = StyleSheet.create({
   },
   name: {
     ...TYPOGRAPHY.span,
-    color: COLORS.white,
+    color: colors.white,
   },
-});
+}));

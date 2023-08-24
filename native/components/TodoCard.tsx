@@ -1,10 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import { RootScreensType } from "../App";
 
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import { TodoType } from "../../shared/types/todos";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
@@ -15,6 +14,7 @@ import Chip from "../UI/Chip";
 import { t } from "@lingui/macro";
 import useLocale from "../../shared/hooks/useLocale";
 import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 type TodoCardPropsType = TodoType & {
   setCompleted: React.ComponentProps<typeof CheckBox>["onChange"];
@@ -31,6 +31,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
   title,
   id,
 }) => {
+  const { colors } = useTheme();
   const styles = useStyles();
   const { i18n } = useLocale();
   const navigation = useNavigation<TodosScreenNavigationProp>();
@@ -51,7 +52,7 @@ const TodoCard: React.FC<TodoCardPropsType> = ({
         <View style={styles.bottomPart}>
           <Text style={styles.when}>{t(i18n)`Today At`} 16:45</Text>
           <Chip
-            iconColor={COLORS.primary}
+            iconColor={colors.primary}
             color="blue"
             Icon={EducationIcon}
             name={t(i18n)`University`}

@@ -2,7 +2,6 @@ import {
   ActivityIndicator,
   FlatList,
   ListRenderItemInfo,
-  StyleSheet,
   Text,
   View,
 } from "react-native";
@@ -11,7 +10,6 @@ import { useCallback, useEffect, useState } from "react";
 
 import useAppState from "../../shared/hooks/useAppState";
 import TYPOGRAPHY from "../constants/typography";
-import COLORS from "../constants/colors";
 import { CatType } from "../../shared/types/cats";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import calculateCatCardHeight from "../utils/calculateCatCardHeight";
@@ -19,8 +17,10 @@ import calculateCatCardHeight from "../utils/calculateCatCardHeight";
 import CatCard from "../components/CatCard";
 import Button from "../UI/Button";
 import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 const CatsScreen: React.FC = () => {
+  const { colors } = useTheme();
   const styles = useStyles();
   const [columns, setColumns] = useState<1 | 2 | 3>(1);
   const { loading, loadCats, cats } = useAppState();
@@ -59,7 +59,7 @@ const CatsScreen: React.FC = () => {
         />
       </View>
     );
-  }, [columns]);
+  }, [columns, styles.header]);
 
   const keyExtractor = useCallback((item: CatType) => item.id, []);
 
@@ -112,7 +112,7 @@ const CatsScreen: React.FC = () => {
           getItemLayout={getItemLayout}
         />
       )}
-      {loading === "pending" && <ActivityIndicator color={COLORS.secondary} />}
+      {loading === "pending" && <ActivityIndicator color={colors.secondary} />}
     </View>
   );
 };

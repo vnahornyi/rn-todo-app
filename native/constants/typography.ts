@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-import COLORS from "./colors";
 import { fontPixel } from "../utils/normalize";
 
 const FONT_FAMILY = "Lato";

@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 
-import COLORS from "../constants/colors";
 import { moderatePixel, pixelSizeHorizontal } from "../utils/normalize";
+import createStyles from "../utils/createStyles";
+import useTheme from "../hooks/useTheme";
 
 import PlusIcon from "../assets/images/icons/plus.svg";
 import { RootScreensType } from "../App";
@@ -11,6 +12,8 @@ import { RootScreensType } from "../App";
 type NavigationType = NativeStackNavigationProp<RootScreensType, "TabsRoot">;
 
 const AddTodoButton: React.FC = () => {
+  const { colors } = useTheme();
+  const styles = useStyles();
   const navigation = useNavigation<NavigationType>();
 
   const handleCreateTodo = () => {
@@ -26,7 +29,7 @@ const AddTodoButton: React.FC = () => {
       <PlusIcon
         width={moderatePixel(32)}
         height={moderatePixel(32)}
-        color={COLORS.white}
+        color={colors.white}
       />
     </TouchableOpacity>
   );
@@ -34,15 +37,15 @@ const AddTodoButton: React.FC = () => {
 
 export default AddTodoButton;
 
-const styles = StyleSheet.create({
+const useStyles = createStyles((colors) => ({
   container: {
     width: moderatePixel(64),
     height: moderatePixel(64),
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 9999,
     position: "relative",
     bottom: pixelSizeHorizontal(32),
   },
-});
+}));

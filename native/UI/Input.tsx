@@ -1,9 +1,8 @@
-import { Animated, StyleSheet, TextInput, View } from "react-native";
+import { Animated, TextInput, View } from "react-native";
 
 import useBoolean from "../../shared/hooks/useBoolean";
 import { useEffect, useMemo, useRef } from "react";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import createStyles from "../utils/createStyles";
 
@@ -62,7 +61,7 @@ const Input: React.FC<PropsType> = ({ label, error, ...inputProps }) => {
         }),
       },
     ],
-    [animation]
+    [animation, styles.label]
   );
 
   const errorStyles = useMemo(
@@ -101,7 +100,7 @@ const useStyles = createStyles((colors) => ({
   input: {
     borderWidth: 1,
     borderRadius: 4,
-    borderColor: COLORS.borderColor,
+    borderColor: colors.borderColor,
     paddingVertical: pixelSizeVertical(16),
     paddingHorizontal: pixelSizeHorizontal(16),
     ...TYPOGRAPHY.bigBody,
@@ -111,6 +110,6 @@ const useStyles = createStyles((colors) => ({
     ...TYPOGRAPHY.span,
     position: "absolute",
     top: pixelSizeVertical(65),
-    color: COLORS.error,
+    color: colors.error,
   },
 }));

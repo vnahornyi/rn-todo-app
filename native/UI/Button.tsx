@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import COLORS from "../constants/colors";
 import TYPOGRAPHY from "../constants/typography";
 import { pixelSizeHorizontal, pixelSizeVertical } from "../utils/normalize";
 import useTheme from "../hooks/useTheme";
@@ -28,12 +27,15 @@ const Button: React.FC<PropsType> = ({
   color = "primary",
   disabled,
 }) => {
-  const { currentTheme } = useTheme();
+  const { currentTheme, colors } = useTheme();
   const { buttonStyles, textStyles } = useMemo(() => {
-    const textByTheme = currentTheme === "light" && variant !== "contained" ? COLORS.black : COLORS.white;
-    const bgColor = variant === "contained" ? COLORS[color] : "transparent";
-    const borderColor = variant === "outline" ? COLORS[color] : "transparent";
-    const textColor = variant === "ghost" ? COLORS[color] : textByTheme;
+    const textByTheme =
+      currentTheme === "light" && variant !== "contained"
+        ? colors.black
+        : colors.white;
+    const bgColor = variant === "contained" ? colors[color] : "transparent";
+    const borderColor = variant === "outline" ? colors[color] : "transparent";
+    const textColor = variant === "ghost" ? colors[color] : textByTheme;
 
     return {
       buttonStyles: {
@@ -49,7 +51,7 @@ const Button: React.FC<PropsType> = ({
         color: textColor,
       },
     };
-  }, [variant, color, currentTheme]);
+  }, [variant, color, currentTheme, colors]);
 
   return (
     <TouchableOpacity
