@@ -37,6 +37,7 @@ import { t } from "@lingui/macro";
 import useLocale from "../shared/hooks/useLocale";
 import ThemeProvider from "./providers/ThemeProvider";
 import createStyles from "./utils/createStyles";
+import useWakeUp from "./hooks/useWakeUp";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -66,12 +67,19 @@ const App: React.FC = () => {
 };
 
 const Navigator: React.FC = () => {
-  const { isLight } = useTheme();
+  const { isLight, preparePreference } = useTheme();
   const { prepareTodos } = useTodos();
 
   useEffect(() => {
-    prepareTodos().finally(SplashScreen.hide);
+    const load = async () => {
+      await Promise.all([prepareTodos(), preparePreference()]);
+      SplashScreen.hide();
+    };
+
+    load();
   }, []);
+
+  useWakeUp(preparePreference);
 
   return (
     <SafeAreaProvider>
