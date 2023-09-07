@@ -1,7 +1,6 @@
 import { createContext, useCallback, useState } from "react";
 import { getFromStorage, setToStorage } from "../../shared/utils/storage";
 import { MOBILE_INTROSKIPPED } from "../../shared/constants/storageKeys";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type ProviderPropsType = {
   children: React.ReactNode;
