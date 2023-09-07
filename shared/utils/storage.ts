@@ -27,7 +27,7 @@ export async function getFromStorage<T = any>(key: string): Promise<T | null> {
 export async function setToStorage(key: string, value: any): Promise<void> {
   try {
     const jsonValue = JSON.stringify(value);
-
+    
     if (PLATFORM.isWeb) {
       localStorage.setItem(key, jsonValue);
     } else {

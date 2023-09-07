@@ -69,10 +69,11 @@ const App: React.FC = () => {
 const Navigator: React.FC = () => {
   const { isLight, preparePreference } = useTheme();
   const { prepareTodos } = useTodos();
+  const { prepareLocale } = useLocale();
 
   useEffect(() => {
     const load = async () => {
-      await Promise.all([prepareTodos(), preparePreference()]);
+      await Promise.all([prepareTodos(), preparePreference(), prepareLocale()]);
       SplashScreen.hide();
     };
 
