@@ -21,7 +21,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
   minimumDate,
   maximumDate,
 }) => {
-  const { currentTheme } = useTheme();
+  const { isLight } = useTheme();
   const { currentLocale } = useLocale();
   const [isShow, setShow] = useBoolean();
 
@@ -49,7 +49,7 @@ const DatePicker: React.FC<DatePickerPropsType> = ({
           locale={currentLocale}
           display={PLATFORM.isIOS ? "inline" : "calendar"}
           value={value}
-          themeVariant={currentTheme}
+          themeVariant={isLight ? "light" : "dark"}
           onChange={handleSelect}
           minimumDate={minimumDate}
           maximumDate={maximumDate}
