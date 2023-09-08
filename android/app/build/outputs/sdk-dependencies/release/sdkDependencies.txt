@@ -1134,6 +1134,19 @@ library {
 }
 library {
   maven_library {
+    groupId: "androidx.transition"
+    artifactId: "transition"
+    version: "1.2.0"
+  }
+  digests {
+    sha256: "\241\340Y\263\274\vC\245\215\354\016\376\315\312\250\234\202\322\274\245R\352[\254\366elF\350S\025~"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
     groupId: "androidx.coordinatorlayout"
     artifactId: "coordinatorlayout"
     version: "1.1.0"
@@ -1179,19 +1192,6 @@ library {
   }
   digests {
     sha256: "\360\322\265\246}\n\221\356\033\034s\357+cj\201\363V9%\335\321Z\035N\034A\354(\336zO"
-  }
-  repo_index {
-    value: 2
-  }
-}
-library {
-  maven_library {
-    groupId: "androidx.transition"
-    artifactId: "transition"
-    version: "1.2.0"
-  }
-  digests {
-    sha256: "\241\340Y\263\274\vC\245\215\354\016\376\315\312\250\234\202\322\274\245R\352[\254\366elF\350S\025~"
   }
   repo_index {
     value: 2
@@ -1701,45 +1701,45 @@ library_dependencies {
   library_index: 87
   library_dep_index: 3
   library_dep_index: 4
-  library_dep_index: 26
   library_dep_index: 2
 }
 library_dependencies {
   library_index: 88
   library_dep_index: 3
-  library_dep_index: 16
-  library_dep_index: 89
-  library_dep_index: 87
-  library_dep_index: 4
-  library_dep_index: 24
-  library_dep_index: 6
-  library_dep_index: 90
-  library_dep_index: 91
-  library_dep_index: 13
-  library_dep_index: 92
-}
-library_dependencies {
-  library_index: 89
-  library_dep_index: 3
-}
-library_dependencies {
-  library_index: 90
-  library_dep_index: 3
   library_dep_index: 4
   library_dep_index: 26
   library_dep_index: 2
 }
 library_dependencies {
+  library_index: 89
+  library_dep_index: 3
+  library_dep_index: 16
+  library_dep_index: 90
+  library_dep_index: 88
+  library_dep_index: 4
+  library_dep_index: 24
+  library_dep_index: 6
+  library_dep_index: 91
+  library_dep_index: 87
+  library_dep_index: 13
+  library_dep_index: 92
+}
+library_dependencies {
+  library_index: 90
+  library_dep_index: 3
+}
+library_dependencies {
   library_index: 91
   library_dep_index: 3
   library_dep_index: 4
+  library_dep_index: 26
   library_dep_index: 2
 }
 library_dependencies {
   library_index: 92
   library_dep_index: 3
   library_dep_index: 24
-  library_dep_index: 90
+  library_dep_index: 91
   library_dep_index: 4
   library_dep_index: 2
 }
@@ -1763,12 +1763,15 @@ module_dependencies {
   dependency_index: 72
   dependency_index: 81
   dependency_index: 86
+  dependency_index: 65
+  dependency_index: 87
+  dependency_index: 4
   dependency_index: 62
   dependency_index: 67
   dependency_index: 24
-  dependency_index: 87
-  dependency_index: 36
   dependency_index: 88
+  dependency_index: 36
+  dependency_index: 89
   dependency_index: 93
   dependency_index: 94
 }
