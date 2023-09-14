@@ -4,6 +4,7 @@ import {
   ListRenderItemInfo,
   Text,
   View,
+  ViewToken,
 } from "react-native";
 import { Plural, Trans } from "@lingui/macro";
 import { useCallback, useEffect, useState } from "react";
@@ -18,20 +19,49 @@ import CatCard from "../components/CatCard";
 import Button from "../UI/Button";
 import createStyles from "../utils/createStyles";
 import useTheme from "../hooks/useTheme";
+import Animated, {
+  useSharedValue,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  withTiming,
+} from "react-native-reanimated";
+
+type ViewableItemsType = {
+  viewableItems: ViewToken[];
+};
 
 const CatsScreen: React.FC = () => {
   const { colors } = useTheme();
   const styles = useStyles();
   const [columns, setColumns] = useState<1 | 2 | 3>(1);
   const { loading, loadCats, cats } = useAppState();
+  const viewableItems = useSharedValue<ViewToken[]>([]);
+  const scrollValue = useSharedValue(0);
+
+  const onScroll = useAnimatedScrollHandler((event) => {
+    scrollValue.value = event.contentOffset.y;
+  });
 
   useEffect(() => {
     loadCats();
   }, []);
 
+  const animatedListStyles = useAnimatedStyle(
+    () => ({
+      ...styles.list,
+      backgroundColor: withTiming(
+        Math.round(scrollValue.value / 10) % 2 === 0 ? "#FFFFFF" : "#000000",
+        { duration: 1000 }
+      ),
+    }),
+    []
+  );
+
   const renderItem = useCallback(
     ({ item }: ListRenderItemInfo<CatType>) => {
-      return <CatCard columns={columns} {...item} />;
+      return (
+        <CatCard viewableItems={viewableItems} columns={columns} {...item} />
+      );
     },
     [columns]
   );
@@ -76,6 +106,13 @@ const CatsScreen: React.FC = () => {
     [columns]
   );
 
+  const onViewableItemsChanged = useCallback(
+    ({ viewableItems: vItems }: ViewableItemsType) => {
+      viewableItems.value = vItems;
+    },
+    []
+  );
+
   return (
     <View style={styles.container}>
       <View>
@@ -95,14 +132,16 @@ const CatsScreen: React.FC = () => {
         </Text>
       )}
       {loading === "fullfiled" && (
-        <FlatList
+        <Animated.FlatList
           key={columns}
           stickyHeaderHiddenOnScroll
           ListHeaderComponent={renderHeader()}
           stickyHeaderIndices={[0]}
           numColumns={columns}
-          style={styles.list}
+          style={animatedListStyles}
           data={cats}
+          onScroll={onScroll}
+          onViewableItemsChanged={onViewableItemsChanged}
           initialNumToRender={columns * 5}
           maxToRenderPerBatch={columns * 5}
           updateCellsBatchingPeriod={300 / columns}
