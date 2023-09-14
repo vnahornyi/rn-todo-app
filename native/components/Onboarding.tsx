@@ -17,6 +17,7 @@ import {
 import Button from "../UI/Button";
 import Stepper from "../UI/Stepper";
 import createStyles from "../utils/createStyles";
+import useAppState from "../hooks/useAppState";
 
 type PropsType = {
   Image: React.FC<SvgProps>;
@@ -51,13 +52,19 @@ const Onboarding: React.FC<PropsType> = ({
   const styles = useStyles();
   const { i18n } = useLocale();
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
+  const { setShowIntroSkipped } = useAppState();
 
   const handleNext = () => {
     navigation.navigate(paths[step]);
+
+    if (step === 3) {
+      void setShowIntroSkipped();
+    }
   };
 
   const handleSkip = useCallback(() => {
     navigation.push("TabsRoot");
+    void setShowIntroSkipped();
   }, []);
 
   return (

@@ -1,10 +1,4 @@
-import {
-  ImageStyle,
-  StyleProp,
-  StyleSheet,
-  TextStyle,
-  ViewStyle,
-} from "react-native";
+import { StyleSheet } from "react-native";
 
 import useTheme from "../hooks/useTheme";
 import { ColorsType } from "../constants/colors";

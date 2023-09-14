@@ -37,6 +37,9 @@ import { t } from "@lingui/macro";
 import useLocale from "../shared/hooks/useLocale";
 import ThemeProvider from "./providers/ThemeProvider";
 import createStyles from "./utils/createStyles";
+import useWakeUp from "./hooks/useWakeUp";
+import AppProvider from "./providers/AppProvider";
+import useAppState from "./hooks/useAppState";
 
 export type RootScreensType = {
   FirstOnboarding: undefined;
@@ -58,20 +61,36 @@ const Tabs = createBottomTabNavigator<RootScreensType>();
 const App: React.FC = () => {
   return (
     <RootProvider>
-      <ThemeProvider>
-        <Navigator />
-      </ThemeProvider>
+      <AppProvider>
+        <ThemeProvider>
+          <Navigator />
+        </ThemeProvider>
+      </AppProvider>
     </RootProvider>
   );
 };
 
 const Navigator: React.FC = () => {
-  const { isLight } = useTheme();
+  const { isLight, preparePreference } = useTheme();
   const { prepareTodos } = useTodos();
+  const { prepareAppState, shouldSkipIntroScreen } = useAppState();
+  const { prepareLocale } = useLocale();
 
   useEffect(() => {
-    prepareTodos().finally(SplashScreen.hide);
+    const load = async () => {
+      await Promise.all([
+        prepareTodos(),
+        preparePreference(),
+        prepareLocale(),
+        prepareAppState(),
+      ]);
+      SplashScreen.hide();
+    };
+
+    load();
   }, []);
+
+  useWakeUp(preparePreference);
 
   return (
     <SafeAreaProvider>
@@ -81,7 +100,9 @@ const Navigator: React.FC = () => {
       />
       <NavigationContainer theme={isLight ? lightTheme : darkTheme}>
         <Stack.Navigator
-          initialRouteName="FirstOnboarding"
+          initialRouteName={
+            shouldSkipIntroScreen ? "TabsRoot" : "FirstOnboarding"
+          }
           screenOptions={{
             headerShown: false,
             animation: "slide_from_right",

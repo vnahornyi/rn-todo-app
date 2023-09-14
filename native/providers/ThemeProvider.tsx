@@ -1,6 +1,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { Appearance } from "react-native";
 import { COLORS, ColorsType, DARK_COLORS } from "../constants/colors";
+import { getFromStorage, setToStorage } from "../../shared/utils/storage";
+import { MOBILE_PREFERENCE } from "../../shared/constants/storageKeys";
 
 type ThemeType = "light" | "dark";
 export type PreferenceType = ThemeType | "system";
@@ -12,6 +14,7 @@ type ThemeStateType = {
 
 type ContextType = Omit<ThemeStateType, "currentTheme"> & {
   setPreference: (preference: PreferenceType) => void;
+  preparePreference: () => Promise<void>;
   colors: ColorsType;
   isLight: boolean;
   isDark: boolean;
@@ -50,6 +53,16 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       currentTheme,
       preference,
     });
+
+    setToStorage(MOBILE_PREFERENCE, preference);
+  }, []);
+
+  const preparePreference = useCallback(async () => {
+    const preference: PreferenceType =
+      (await getFromStorage<PreferenceType | null>(MOBILE_PREFERENCE)) ??
+      "system";
+
+    setPreference(preference);
   }, []);
 
   return (
@@ -60,6 +73,7 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
         isLight: theme.currentTheme === "light",
         colors: theme.currentTheme === "light" ? COLORS : DARK_COLORS,
         setPreference,
+        preparePreference,
       }}
     >
       {children}

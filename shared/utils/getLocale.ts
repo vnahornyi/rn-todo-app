@@ -1,27 +1,17 @@
-// import {
-//   detect,
-//   fromUrl,
-//   fromStorage,
-//   fromNavigator,
-// } from "@lingui/detect-locale";
 import { NativeModules } from "react-native";
 
 import PLATFORM from "../constants/platform";
+import { getFromStorage } from "./storage";
+import { WEB_LANGUAGE } from "../constants/storageKeys";
 
 export const DEFAULT_FALLBACK = "en";
 export const LOCALES = ["en", "uk"];
 
-const detectLocale = () => {
+const detectLocale = async () => {
   let locale: string = DEFAULT_FALLBACK;
 
   if (PLATFORM.isWeb) {
-    // commented for now
-    // locale = detect(
-    //   fromUrl("lang"),
-    //   fromStorage("lang"),
-    //   fromNavigator(),
-    //   DEFAULT_FALLBACK
-    // ) as string;
+    locale = (await getFromStorage<string>(WEB_LANGUAGE)) ?? DEFAULT_FALLBACK;
   } else if (PLATFORM.isIOS) {
     locale =
       NativeModules.SettingsManager.settings.AppleLocale ||
